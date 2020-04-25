@@ -6,11 +6,7 @@ const BlogPage = ({ data }) => (
     <h1>Blog page</h1>
     {data.allMdx.nodes.map(item => (
       <>
-        <h1>
-          {item.frontmatter.title}
-          <br></br>
-        </h1>
-
+        <h1>{item.title}</h1>
         <p>{item.excerpt}</p>
       </>
     ))}
@@ -18,18 +14,15 @@ const BlogPage = ({ data }) => (
 )
 
 export const query = graphql`
-  {
-    allMdx {
-      nodes {
-        frontmatter {
-          author
-          slug
-          title
-        }
-        excerpt
+  allMdx {
+    nodes {
+      frontmatter {
+        author
+        slug
+        title
       }
+      excerpt
     }
-  }
-`
+  }`
 
 export default BlogPage

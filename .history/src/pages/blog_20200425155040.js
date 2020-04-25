@@ -7,7 +7,7 @@ const BlogPage = ({ data }) => (
     {data.allMdx.nodes.map(item => (
       <>
         <h1>
-          {item.frontmatter.title}
+          {item.title}
           <br></br>
         </h1>
 
