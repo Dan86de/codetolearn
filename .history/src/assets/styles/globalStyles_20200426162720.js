@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 1rem;
-    color: #1C1C1C;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -43,9 +42,6 @@ const GlobalStyle = createGlobalStyle`
   }
   h5 {
     font-size: var(--fontH5);
-  }
-  p {
-    font-size: var(--fontBody);
   }
   a {
   }

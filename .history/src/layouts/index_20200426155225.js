@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation/Navigation"
 const MainLayout = ({ children }) => (
   <>
     <GlobalStyle />
-    <Navigation />
+    <Navigation></Navigation>
     <div>{children}</div>
   </>
 )

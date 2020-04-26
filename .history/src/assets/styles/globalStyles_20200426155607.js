@@ -3,12 +3,12 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle`
   :root {
     /* --blue: royalblue; all global variables info fe. colors */
-    --fontH1: 2.8019em;
-    --fontH2: 2.4413em;
-    --fontH3: 1.953em;
-    --fontH4: 1.563em;
-    --fontH5: 1.25em;
-    --fontBody: 1em;
+    --fontH1: 36,62 px;
+    --fontH2: 29,3 px;
+    --fontH3: 23,44 px;
+    --fontH4: 18,75 px;
+    --fontH5: 15 px;
+    --fontBody: 16 px;
   }
   html {
     box-sizing: border-box;
@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 1rem;
-    color: #1C1C1C;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -28,24 +27,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     line-height: 1.5;
-  }
-  h1 {
-    font-size: var(--fontH1);
-  }
-  h2 {
-    font-size: var(--fontH2);
-  }
-  h3 {
-    font-size: var(--fontH3);
-  }
-  h4 {
-    font-size: var(--fontH4);
-  }
-  h5 {
-    font-size: var(--fontH5);
-  }
-  p {
-    font-size: var(--fontBody);
   }
   a {
   }

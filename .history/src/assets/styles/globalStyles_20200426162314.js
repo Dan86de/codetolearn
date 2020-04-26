@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 1rem;
-    color: #1C1C1C;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -28,24 +27,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     line-height: 1.5;
-  }
-  h1 {
-    font-size: var(--fontH1);
-  }
-  h2 {
-    font-size: var(--fontH2);
-  }
-  h3 {
-    font-size: var(--fontH3);
-  }
-  h4 {
-    font-size: var(--fontH4);
-  }
-  h5 {
-    font-size: var(--fontH5);
-  }
-  p {
-    font-size: var(--fontBody);
   }
   a {
   }
