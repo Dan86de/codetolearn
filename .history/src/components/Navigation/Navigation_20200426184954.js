@@ -28,7 +28,6 @@ const MenuList = styled.ul`
   display: flex;
   align-items: center;
   margin-right: 2em;
-  font-family: "Montserrat";
 `
 
 const MenuListItem = styled(Link)`

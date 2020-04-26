@@ -9,15 +9,9 @@ const RecentPostWrapper = styled.div`
   max-width: 1536px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   grid-row-gap: 2rem;
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 1280px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 `
 
 const BlogPage = ({ data }) => (
@@ -49,7 +43,7 @@ export const query = graphql`
           featuredImage {
             childImageSharp {
               fluid(grayscale: true, maxHeight: 200, maxWidth: 400) {
-                ...GatsbyImageSharpFluid_tracedSVG
+                src
               }
             }
           }

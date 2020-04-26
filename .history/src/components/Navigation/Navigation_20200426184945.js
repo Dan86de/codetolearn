@@ -13,8 +13,7 @@ const NavigationWrapper = styled.div`
 
 const LogoWrapper = styled.div`
   flex-grow: 2;
-  font-family: "Montserrat";
-  a {
+  font-family: "Montserrat" a {
     font-size: var(--fontH3);
     text-decoration: none;
     color: inherit;
@@ -28,7 +27,6 @@ const MenuList = styled.ul`
   display: flex;
   align-items: center;
   margin-right: 2em;
-  font-family: "Montserrat";
 `
 
 const MenuListItem = styled(Link)`

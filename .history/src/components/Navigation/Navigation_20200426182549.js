@@ -13,7 +13,6 @@ const NavigationWrapper = styled.div`
 
 const LogoWrapper = styled.div`
   flex-grow: 2;
-  font-family: "Montserrat";
   a {
     font-size: var(--fontH3);
     text-decoration: none;
@@ -28,7 +27,6 @@ const MenuList = styled.ul`
   display: flex;
   align-items: center;
   margin-right: 2em;
-  font-family: "Montserrat";
 `
 
 const MenuListItem = styled(Link)`
@@ -37,7 +35,6 @@ const MenuListItem = styled(Link)`
   text-decoration: none;
   color: inherit;
   padding: 0em 1.5em;
-  cursor: pointer;
 `
 
 const NewsletterBtn = styled.button`
@@ -45,10 +42,9 @@ const NewsletterBtn = styled.button`
   color: white;
   font-size: var(--fontH5);
   border: 2px solid black;
-  padding: 1em 1.75em;
+  padding: 1em 2em;
   font-weight: 700;
-  transition: all 0.3s linear;
-  cursor: pointer;
+  transition: all 0.3s ease-in-out
   &:hover {
     background-color: white;
     color: black;

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Navigation from "../components/Navigation/Navigation"
 
 const GlobalWrapper = styled.div`
-  margin: 1rem;
+  margin-top: 1rem;
 `
 
 const MainLayout = ({ children }) => (
