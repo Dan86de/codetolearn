@@ -15,7 +15,7 @@ const LogoWrapper = styled.div`
   flex-grow: 2;
   font-family: "Montserrat";
   a {
-    font-size: var(--fontH4);
+    font-size: var(--fontBody);
     text-decoration: none;
     color: inherit;
     font-weight: 700;
@@ -33,7 +33,7 @@ const MenuList = styled.ul`
 
 const MenuListItem = styled(Link)`
   font-weight: 700;
-  font-size: var(--fontBody);
+  font-size: var(--fontH5);
   text-decoration: none;
   color: inherit;
   padding: 0em 1.5em;
