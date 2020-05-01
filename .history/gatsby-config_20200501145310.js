@@ -1,5 +1,4 @@
 require("dotenv").config()
-
 module.exports = {
   siteMetadata: {
     title: `CoteToLearn`,
@@ -13,7 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: process.env.API_DATO_CMS,
+        apiToken: process.env.npm,
       },
     },
     {

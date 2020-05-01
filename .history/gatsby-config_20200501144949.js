@@ -1,5 +1,3 @@
-require("dotenv").config()
-
 module.exports = {
   siteMetadata: {
     title: `CoteToLearn`,
@@ -13,7 +11,9 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: process.env.API_DATO_CMS,
+        // You can find your read-only API token under the Settings > API tokens
+        // section of your administrative area:
+        apiToken: `9e23b4521edbe916a6f6462212225e`,
       },
     },
     {
