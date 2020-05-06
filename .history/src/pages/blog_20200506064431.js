@@ -28,9 +28,9 @@ const BlogPage = ({ data }) => (
         <PostPreview
           title={item.title}
           author={item.author}
-          date={item.meta.createdAt}
+          date={item.frontmatter.date}
           excerpt={item.articleContent.paragraphContent}
-          featuredImage={item.featuredImage.fluid}
+          featuredImage={item.frontmatter.featuredImage.childImageSharp.fluid}
           key={item.id}
         ></PostPreview>
       ))}
@@ -45,12 +45,6 @@ export const query = graphql`
         id
         title
         author
-        featuredImage {
-          fluid(maxWidth: 400) {
-            src
-            srcSet
-          }
-        }
         articleContent {
           ... on DatoCmsParagraph {
             paragraphContent
@@ -58,9 +52,16 @@ export const query = graphql`
           ... on DatoCmsHeading {
             headingContent
           }
-        }
-        meta {
-          createdAt
+          ... on DatoCmsArticleImage {
+            articleImage {
+              fluid(maxWidth: 400) {
+                base64
+                tracedSVG
+                width
+                height
+              }
+            }
+          }
         }
       }
     }

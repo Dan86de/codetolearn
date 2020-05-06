@@ -30,7 +30,7 @@ const BlogPage = ({ data }) => (
           author={item.author}
           date={item.meta.createdAt}
           excerpt={item.articleContent.paragraphContent}
-          featuredImage={item.featuredImage.fluid}
+          featuredImage={item.articleContent.articleImage.fluid.tracedSVG}
           key={item.id}
         ></PostPreview>
       ))}
@@ -45,12 +45,6 @@ export const query = graphql`
         id
         title
         author
-        featuredImage {
-          fluid(maxWidth: 400) {
-            src
-            srcSet
-          }
-        }
         articleContent {
           ... on DatoCmsParagraph {
             paragraphContent

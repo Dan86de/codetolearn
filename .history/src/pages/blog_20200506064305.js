@@ -24,13 +24,13 @@ const BlogPage = ({ data }) => (
   <>
     <h1>This is site with all of my articles</h1>
     <RecentPostWrapper>
-      {data.allDatoCmsArticle.nodes.map(item => (
+      {data.allMdx.nodes.map(item => (
         <PostPreview
           title={item.title}
           author={item.author}
-          date={item.meta.createdAt}
+          date={item.frontmatter.date}
           excerpt={item.articleContent.paragraphContent}
-          featuredImage={item.featuredImage.fluid}
+          featuredImage={item.frontmatter.featuredImage.childImageSharp.fluid}
           key={item.id}
         ></PostPreview>
       ))}
@@ -45,22 +45,24 @@ export const query = graphql`
         id
         title
         author
-        featuredImage {
-          fluid(maxWidth: 400) {
-            src
-            srcSet
-          }
-        }
         articleContent {
+          _
           ... on DatoCmsParagraph {
             paragraphContent
           }
           ... on DatoCmsHeading {
             headingContent
           }
-        }
-        meta {
-          createdAt
+          ... on DatoCmsArticleImage {
+            articleImage {
+              fluid(maxWidth: 400) {
+                base64
+                tracedSVG
+                width
+                height
+              }
+            }
+          }
         }
       }
     }

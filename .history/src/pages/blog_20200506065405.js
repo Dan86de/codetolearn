@@ -30,7 +30,7 @@ const BlogPage = ({ data }) => (
           author={item.author}
           date={item.meta.createdAt}
           excerpt={item.articleContent.paragraphContent}
-          featuredImage={item.featuredImage.fluid}
+          featuredImage={item.featuredImage.fluid.tracedSVG}
           key={item.id}
         ></PostPreview>
       ))}
@@ -47,8 +47,7 @@ export const query = graphql`
         author
         featuredImage {
           fluid(maxWidth: 400) {
-            src
-            srcSet
+            tracedSVG
           }
         }
         articleContent {
