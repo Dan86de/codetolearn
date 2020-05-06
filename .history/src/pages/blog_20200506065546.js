@@ -47,8 +47,7 @@ export const query = graphql`
         author
         featuredImage {
           fluid(maxWidth: 400) {
-            src
-            srcSet
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
         articleContent {
