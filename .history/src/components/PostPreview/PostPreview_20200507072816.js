@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import WatchIcon from "../Icons/WatchIcon"
 
 const PreviewWrapper = styled.div`
   display: flex;
@@ -45,7 +44,6 @@ const PostPreview = props => {
         <PreviewImage fluid={props.featuredImage}></PreviewImage>
         <PrewievTextWrapper>
           <h4>{props.title}</h4>
-          <WatchIcon />
           <h5>{postDate.toLocaleDateString("pl-PL", options)}</h5>
           {props.excerpt}
         </PrewievTextWrapper>

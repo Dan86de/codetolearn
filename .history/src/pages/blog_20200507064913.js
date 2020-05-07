@@ -20,25 +20,23 @@ const RecentPostWrapper = styled.div`
   }
 `
 
-const BlogPage = ({ data }) => {
-  return (
-    <>
-      <h1>This is site with all of my articles</h1>
-      <RecentPostWrapper>
-        {data.allDatoCmsArticle.nodes.map(item => (
-          <PostPreview
-            title={item.title}
-            author={item.author}
-            date={item.meta.createdAt}
-            excerpt={item.excerpt}
-            featuredImage={item.featuredImage.fluid}
-            key={item.id}
-          ></PostPreview>
-        ))}
-      </RecentPostWrapper>
-    </>
-  )
-}
+const BlogPage = ({ data }) => (
+  <>
+    <h1>This is site with all of my articles</h1>
+    <RecentPostWrapper>
+      {data.allDatoCmsArticle.nodes.map(item => (
+        <PostPreview
+          title={item.title}
+          author={item.author}
+          date={item.meta.createdAt}
+          excerpt={item.excerpt}
+          featuredImage={item.featuredImage.fluid}
+          key={item.id}
+        ></PostPreview>
+      ))}
+    </RecentPostWrapper>
+  </>
+)
 
 export const query = graphql`
   {

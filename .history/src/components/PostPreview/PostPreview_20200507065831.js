@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import WatchIcon from "../Icons/WatchIcon"
 
 const PreviewWrapper = styled.div`
   display: flex;
@@ -32,21 +31,18 @@ const PrewievTextWrapper = styled.div`
 `
 
 const PostPreview = props => {
-  let postDate = new Date(props.date)
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }
   return (
     <>
       <PreviewWrapper>
         <PreviewImage fluid={props.featuredImage}></PreviewImage>
-        <PrewievTextWrapper>
+        <PrewievTextWrapper
+          title={props.title}
+          author={props.author}
+          date={props.date}
+          excerpt={props.excerpt}
+        >
           <h4>{props.title}</h4>
-          <WatchIcon />
-          <h5>{postDate.toLocaleDateString("pl-PL", options)}</h5>
+          <h5>{Date.parse({props.date}).toDateString()}</h5>
           {props.excerpt}
         </PrewievTextWrapper>
       </PreviewWrapper>

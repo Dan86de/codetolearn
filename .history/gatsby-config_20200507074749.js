@@ -16,6 +16,20 @@ module.exports = {
         apiToken: process.env.DATO_API_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/blog/posts/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `icons`,
+        path: `${__dirname}/src/assets/images/icons`,
+      },
+    },
     `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,

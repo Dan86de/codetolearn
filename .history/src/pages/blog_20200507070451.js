@@ -29,7 +29,7 @@ const BlogPage = ({ data }) => {
           <PostPreview
             title={item.title}
             author={item.author}
-            date={item.meta.createdAt}
+            date={item.createdAt}
             excerpt={item.excerpt}
             featuredImage={item.featuredImage.fluid}
             key={item.id}
