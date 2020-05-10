@@ -35,8 +35,10 @@ const ArticleWrapper = styled.div`
   margin: 0 auto;
   max-width: 800px;
   p {
+    opacity: 0.8;
     text-align: justify;
-    font-size: var(--fontBody);
+    font-size: 18px;
+    line-height: 1.2em;
   }
 `
 
