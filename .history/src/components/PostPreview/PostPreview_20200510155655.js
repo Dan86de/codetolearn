@@ -24,7 +24,6 @@ const PrewievTextWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
-  padding: 1rem;
   h4 {
     margin: 0;
     padding: 0;
@@ -39,6 +38,7 @@ const PrewievTextWrapper = styled.div`
 
 const DateContainer = styled.div`
   display: flex;
+  justify-content: center;
   width: 100%;
 `
 
@@ -55,7 +55,7 @@ const PostPreview = props => {
     <PreviewWrapper to={`/blog/${slugifiedTitle}`} key={props.id}>
       <PreviewImage fluid={props.featuredImage}></PreviewImage>
       <PrewievTextWrapper>
-        <h3>{props.title}</h3>
+        <h4>{props.title}</h4>
         <DateContainer>
           <h5>{postDate.toLocaleDateString("pl-PL", options)}</h5>
         </DateContainer>

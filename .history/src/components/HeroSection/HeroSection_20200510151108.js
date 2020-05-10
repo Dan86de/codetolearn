@@ -4,13 +4,14 @@ import styled from "styled-components"
 const HeroSectionWrapper = styled.div`
   width: 100%;
   max-width: 1536px;
+  height: calc(100vh - 100px);
   margin: 0 auto;
   display: flex;
   align-items: center;
 `
 
 const HeroSectionTextWrapper = styled.div`
-  width: 100%;
+  width: 45%;
   h2 {
     line-height: 1.2;
   }
@@ -19,16 +20,15 @@ const HeroSectionTextWrapper = styled.div`
     color: #555555;
     line-height: 1.5;
   }
-  @media only screen and (min-width: 768px) {
-    width: 50%;
-  }
 `
 
 const HeroSection = () => {
   return (
     <HeroSectionWrapper>
       <HeroSectionTextWrapper>
-        <h2>Cześć, nazywam się Daniel Noworyta i chcę być programistą.</h2>
+        <h2>
+          Cześć,<br></br> nazywam się Daniel Noworyta i chcę być programistą.
+        </h2>
         <p>
           Odkąd pamiętam interesowały mnie strony internetowe i biznes w
           internecie. Opowiadam o swojej internetowej podróży na moim{" "}

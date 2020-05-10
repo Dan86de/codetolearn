@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const ArticleHeroWrapper = styled.div`
   width: 100%;
@@ -35,6 +37,7 @@ const ArticleWrapper = styled.div`
   margin: 0 auto;
   max-width: 800px;
   p {
+    opacity: 0.8;
     text-align: justify;
     font-size: var(--fontBody);
   }
@@ -111,7 +114,7 @@ const PostLayout = ({ data }) => {
               case "headingContent":
                 return <h3 key={item.id}>{item[itemKey]}</h3>
               case "paragraphContent":
-                return <p key={item.id}>{item[itemKey]}</p>
+                return <MDXRenderer key={item.id}>{item[itemKey]}</MDXRenderer>
               case "articleImage":
                 return <Img key={item.id} fluid={item[itemKey].fluid}></Img>
               default:

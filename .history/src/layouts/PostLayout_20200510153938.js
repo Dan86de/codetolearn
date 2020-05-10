@@ -12,32 +12,14 @@ const ArticleHeroWrapper = styled.div`
 const HeroTextWrapper = styled.div`
   width: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column
   justify-content: center;
-  background-color: #f2f2f2;
-  padding: 0 1rem;
-  h1 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  h4 {
-    margin: 0;
-    padding: 0;
-    opacity: 0.8;
-    text-align: center;
-  }
 `
 
 const ArticleWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   max-width: 800px;
-  p {
-    text-align: justify;
-    font-size: var(--fontBody);
-  }
 `
 
 const ArticleFeaturedImage = styled(Img)`
@@ -82,23 +64,13 @@ export const query = graphql`
 `
 
 const PostLayout = ({ data }) => {
-  let postDate = new Date(data.datoCmsArticle.meta.publishedAt)
-  const options = {
-    weekday: "short",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }
   return (
     <>
       <ArticleHeroWrapper>
         <ArticleFeaturedImage fluid={data.datoCmsArticle.featuredImage.fluid} />
         <HeroTextWrapper>
           <h1>{data.datoCmsArticle.title}</h1>
-          <p>
-            {postDate.toLocaleDateString("pl-PL", options)} {", "}
-            {data.datoCmsArticle.author}
-          </p>
+          <h4>{data.datoCmsArticle.author}</h4>
         </HeroTextWrapper>
       </ArticleHeroWrapper>
 
