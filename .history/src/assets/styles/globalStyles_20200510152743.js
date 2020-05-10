@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     --fontH2: 1.22065em;
     --fontH3: 0.9765em;
     --fontH4: 0.7815em;
-    --fontH5: 0.625em;
+    --fontH5: 0.6em;
     --fontBody: 0.5em;
     @media only screen and (min-width: 600px) {
     --fontH1: 2.8019em;

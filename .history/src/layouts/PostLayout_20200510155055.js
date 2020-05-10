@@ -34,9 +34,9 @@ const ArticleWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   max-width: 800px;
-  p {
-    text-align: justify;
-    font-size: var(--fontBody);
+  h5 {
+    opacity: 0.8;
+    font-weight: 500;
   }
 `
 
@@ -84,7 +84,7 @@ export const query = graphql`
 const PostLayout = ({ data }) => {
   let postDate = new Date(data.datoCmsArticle.meta.publishedAt)
   const options = {
-    weekday: "short",
+    weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -111,7 +111,7 @@ const PostLayout = ({ data }) => {
               case "headingContent":
                 return <h3 key={item.id}>{item[itemKey]}</h3>
               case "paragraphContent":
-                return <p key={item.id}>{item[itemKey]}</p>
+                return <h5 key={item.id}>{item[itemKey]}</h5>
               case "articleImage":
                 return <Img key={item.id} fluid={item[itemKey].fluid}></Img>
               default:

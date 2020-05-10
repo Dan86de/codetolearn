@@ -2,20 +2,21 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --fontH1: 1.40095em;
-    --fontH2: 1.22065em;
-    --fontH3: 0.9765em;
-    --fontH4: 0.7815em;
-    --fontH5: 0.625em;
-    --fontBody: 0.5em;
-    @media only screen and (min-width: 600px) {
+    /* --blue: royalblue; all global variables info fe. colors */
     --fontH1: 2.8019em;
     --fontH2: 2.4413em;
     --fontH3: 1.953em;
     --fontH4: 1.563em;
     --fontH5: 1.25em;
     --fontBody: 1em;
-  }
+
+    @media only screen and (max-width: 600px) {
+    --fontH1: 1.4em;
+    --fontH2: 1.2em;
+    --fontH3: 0.9em;
+    --fontH4: 0.75em;
+    --fontH5: 0.6em;
+    --fontBody: 0.5em;
 }
   }
   html {

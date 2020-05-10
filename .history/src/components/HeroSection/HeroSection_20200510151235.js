@@ -10,7 +10,7 @@ const HeroSectionWrapper = styled.div`
 `
 
 const HeroSectionTextWrapper = styled.div`
-  width: 100%;
+  width: 45%;
   h2 {
     line-height: 1.2;
   }
@@ -18,9 +18,6 @@ const HeroSectionTextWrapper = styled.div`
     font-size: var(--fontH5);
     color: #555555;
     line-height: 1.5;
-  }
-  @media only screen and (min-width: 768px) {
-    width: 50%;
   }
 `
 

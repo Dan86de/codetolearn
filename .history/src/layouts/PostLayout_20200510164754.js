@@ -35,6 +35,7 @@ const ArticleWrapper = styled.div`
   margin: 0 auto;
   max-width: 800px;
   p {
+    opacity: 0.8;
     text-align: justify;
     font-size: var(--fontBody);
   }
@@ -111,7 +112,10 @@ const PostLayout = ({ data }) => {
               case "headingContent":
                 return <h3 key={item.id}>{item[itemKey]}</h3>
               case "paragraphContent":
-                return <p key={item.id}>{item[itemKey]}</p>
+                let wrapper = document.createElement('div')
+                let data = {item[itemKey]}
+                wrapper.innerHTML(data)
+                return {wrapper}
               case "articleImage":
                 return <Img key={item.id} fluid={item[itemKey].fluid}></Img>
               default:

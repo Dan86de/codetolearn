@@ -34,9 +34,10 @@ const ArticleWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   max-width: 800px;
-  p {
+  h5 {
+    opacity: 0.8;
+    font-weight: 500;
     text-align: justify;
-    font-size: var(--fontBody);
   }
 `
 
@@ -111,7 +112,7 @@ const PostLayout = ({ data }) => {
               case "headingContent":
                 return <h3 key={item.id}>{item[itemKey]}</h3>
               case "paragraphContent":
-                return <p key={item.id}>{item[itemKey]}</p>
+                return <h5 key={item.id}>{item[itemKey]}</h5>
               case "articleImage":
                 return <Img key={item.id} fluid={item[itemKey].fluid}></Img>
               default:

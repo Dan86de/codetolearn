@@ -3,46 +3,14 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
 
-const ArticleHeroWrapper = styled.div`
-  width: 100%;
-  height: 400px;
-  display: flex;
-`
-
-const HeroTextWrapper = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f2f2f2;
-  padding: 0 1rem;
-  h1 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  h4 {
-    margin: 0;
-    padding: 0;
-    opacity: 0.8;
-    text-align: center;
-  }
-`
-
 const ArticleWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  max-width: 800px;
-  p {
-    text-align: justify;
-    font-size: var(--fontBody);
-  }
 `
 
 const ArticleFeaturedImage = styled(Img)`
-  width: 50%;
-  height: 400px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
 `
 
@@ -82,27 +50,12 @@ export const query = graphql`
 `
 
 const PostLayout = ({ data }) => {
-  let postDate = new Date(data.datoCmsArticle.meta.publishedAt)
-  const options = {
-    weekday: "short",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }
   return (
     <>
-      <ArticleHeroWrapper>
-        <ArticleFeaturedImage fluid={data.datoCmsArticle.featuredImage.fluid} />
-        <HeroTextWrapper>
-          <h1>{data.datoCmsArticle.title}</h1>
-          <p>
-            {postDate.toLocaleDateString("pl-PL", options)} {", "}
-            {data.datoCmsArticle.author}
-          </p>
-        </HeroTextWrapper>
-      </ArticleHeroWrapper>
-
+      <Img fluid={data.datoCmsArticle.featuredImage.fluid} />
       <ArticleWrapper>
+        <h1>{data.datoCmsArticle.title}</h1>
+        <h4>{data.datoCmsArticle.author}</h4>
         <div>
           {data.datoCmsArticle.articleContent.map(item => {
             const itemKey = Object.keys(item)[1]
