@@ -67,7 +67,7 @@ class Signup extends React.Component {
           <div style={{ opacity: 0.2 }}></div>
           <div data-style="minimal">
             <FormHeader data-element="header">
-              <h1>Zapisz się na newsletter CodeToLearn!</h1>
+              <h2>Zapisz się na newsletter CodeToLearn!</h2>
             </FormHeader>
 
             <FormSubheader data-element="subheader">

@@ -3,27 +3,23 @@ import styled from "styled-components"
 
 const SignUpWrapper = styled.div`
   width: 100%;
-  max-width: 1280px;
+  max-width: 1536px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const SignUpForm = styled.form`
-  border: 2px solid black;
-  padding: 1rem 2rem;
-  border-top: 13px solid black;
+  background-color: #d5d5d5;
 `
 
 const FormHeader = styled.div`
   color: var(--mainColor);
-  text-align: center;
 `
 
 const FormSubheader = styled.div`
   color: var(--mainColor);
-  font-size: var(--fontH5);
-  text-align: center;
-  margin: 0;
-  padding: 0;
 `
 
 const FormInput = styled.input`
@@ -31,14 +27,9 @@ const FormInput = styled.input`
   border-color: black;
   border-radius: "4px";
   font-weight: 400;
-  font-size: var(--fontH5);
-  padding: 1rem 2rem;
-  margin: 0 1rem;
 `
 
 const FormSbmtBtn = styled.button`
-  margin: 0 auto;
-  display: block;
   color: white;
   background-color: var(--mainColor);
   padding: 1rem 3rem;
@@ -72,9 +63,9 @@ class Signup extends React.Component {
 
             <FormSubheader data-element="subheader">
               <p>
-                Informacje na temat <strong>nowości na blogu</strong> i
-                sprawdzone <strong>sposoby nauki front-endu</strong> prosto na
-                Twój email.
+                Informacje o <strong>nowych artykułach</strong> i{" "}
+                <strong>sposobach na skuteczną naukę programowania</strong>{" "}
+                prosto na Twój e-mail
               </p>
             </FormSubheader>
 
@@ -86,12 +77,6 @@ class Signup extends React.Component {
                   placeholder="Twój adres email"
                   required=""
                   type="email"
-                />
-                <FormInput
-                  name="fields[first_name]"
-                  placeholder="Twoje imię"
-                  required=""
-                  type="text"
                 />
               </div>
               <FormSbmtBtn data-element="submit">

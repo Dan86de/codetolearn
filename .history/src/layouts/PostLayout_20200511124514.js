@@ -109,7 +109,7 @@ const PostLayout = ({ data }) => {
 
             switch (itemKey) {
               case "headingContent":
-                return <h2 key={item.id}>{item[itemKey]}</h2>
+                return <h1 key={item.id}>{item[itemKey]}</h1>
               case "paragraphContent":
                 return <p key={item.id}>{item[itemKey]}</p>
               case "articleImage":

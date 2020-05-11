@@ -8,19 +8,22 @@ const SignUpWrapper = styled.div`
 `
 
 const SignUpForm = styled.form`
+  background-color: #d5d5d5;
   border: 2px solid black;
   padding: 1rem 2rem;
-  border-top: 13px solid black;
 `
 
 const FormHeader = styled.div`
   color: var(--mainColor);
   text-align: center;
+  h2 {
+    line-height: 1.2;
+  }
 `
 
 const FormSubheader = styled.div`
   color: var(--mainColor);
-  font-size: var(--fontH5);
+  font-size: var(--fontH3);
   text-align: center;
   margin: 0;
   padding: 0;
@@ -31,9 +34,7 @@ const FormInput = styled.input`
   border-color: black;
   border-radius: "4px";
   font-weight: 400;
-  font-size: var(--fontH5);
-  padding: 1rem 2rem;
-  margin: 0 1rem;
+  font-size: var(--fontH4);
 `
 
 const FormSbmtBtn = styled.button`
@@ -67,7 +68,7 @@ class Signup extends React.Component {
           <div style={{ opacity: 0.2 }}></div>
           <div data-style="minimal">
             <FormHeader data-element="header">
-              <h1>Zapisz się na newsletter CodeToLearn!</h1>
+              <h2>Zapisz się na newsletter CodeToLearn!</h2>
             </FormHeader>
 
             <FormSubheader data-element="subheader">

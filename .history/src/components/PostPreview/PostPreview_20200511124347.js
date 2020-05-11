@@ -59,7 +59,7 @@ const PostPreview = props => {
         <DateContainer>
           <h5>{postDate.toLocaleDateString("pl-PL", options)}</h5>
         </DateContainer>
-        <p>{props.excerpt}</p>
+        {props.excerpt}
       </PrewievTextWrapper>
     </PreviewWrapper>
   )

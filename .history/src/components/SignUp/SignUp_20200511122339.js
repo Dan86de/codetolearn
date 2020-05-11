@@ -3,14 +3,17 @@ import styled from "styled-components"
 
 const SignUpWrapper = styled.div`
   width: 100%;
-  max-width: 1280px;
+  max-width: 1536px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const SignUpForm = styled.form`
+  background-color: #d5d5d5;
   border: 2px solid black;
   padding: 1rem 2rem;
-  border-top: 13px solid black;
 `
 
 const FormHeader = styled.div`
@@ -20,10 +23,8 @@ const FormHeader = styled.div`
 
 const FormSubheader = styled.div`
   color: var(--mainColor);
-  font-size: var(--fontH5);
+  font-size: var(--fontH4);
   text-align: center;
-  margin: 0;
-  padding: 0;
 `
 
 const FormInput = styled.input`
@@ -31,9 +32,7 @@ const FormInput = styled.input`
   border-color: black;
   border-radius: "4px";
   font-weight: 400;
-  font-size: var(--fontH5);
-  padding: 1rem 2rem;
-  margin: 0 1rem;
+  font-size: var(--fontH4);
 `
 
 const FormSbmtBtn = styled.button`
@@ -86,12 +85,6 @@ class Signup extends React.Component {
                   placeholder="Twój adres email"
                   required=""
                   type="email"
-                />
-                <FormInput
-                  name="fields[first_name]"
-                  placeholder="Twoje imię"
-                  required=""
-                  type="text"
                 />
               </div>
               <FormSbmtBtn data-element="submit">
