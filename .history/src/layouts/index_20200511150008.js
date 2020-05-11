@@ -14,9 +14,9 @@ const MainLayout = ({ children }) => (
     <GlobalWrapper>
       <Navigation />
       {children}
-      <Footer />
+      <Footer />>
     </GlobalWrapper>
-  </>
+  </Footer>
 )
 
 export default MainLayout

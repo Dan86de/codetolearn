@@ -14,7 +14,6 @@ const MainLayout = ({ children }) => (
     <GlobalWrapper>
       <Navigation />
       {children}
-      <Footer />
     </GlobalWrapper>
   </>
 )
