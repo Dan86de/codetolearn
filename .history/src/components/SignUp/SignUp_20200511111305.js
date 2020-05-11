@@ -16,6 +16,7 @@ class Signup extends React.Component {
       <SignUpWrapper>
         <form
           action="https://app.convertkit.com/forms/1343076/subscriptions"
+          className="seva-form formkit-form"
           method="post"
           data-sv-form="1343076"
           data-uid="b63667beec"
@@ -23,9 +24,10 @@ class Signup extends React.Component {
           min-width="400 500 600 700 800"
           style={{ backgroundColor: "rgb(249, 250, 251)", borderRadius: "4px" }}
         >
-          <div style={{ opacity: 0.2 }}></div>
+          <div className="formkit-background" style={{ opacity: 0.2 }}></div>
           <div data-style="minimal">
             <div
+              className="formkit-header"
               data-element="header"
               style={{
                 color: "rgb(77, 77, 77)",
@@ -37,6 +39,7 @@ class Signup extends React.Component {
             </div>
 
             <div
+              className="formkit-subheader"
               data-element="subheader"
               style={{ color: "rgb(104, 104, 104)", fontSize: "18px" }}
             >
@@ -49,10 +52,19 @@ class Signup extends React.Component {
               </p>
             </div>
 
-            <ul data-element="errors" data-group="alert"></ul>
-            <div data-element="fields" data-stacked="false">
-              <div>
+            <ul
+              className="formkit-alert formkit-alert-error"
+              data-element="errors"
+              data-group="alert"
+            ></ul>
+            <div
+              data-element="fields"
+              data-stacked="false"
+              className="seva-fields formkit-fields"
+            >
+              <div className="formkit-field">
                 <input
+                  className="formkit-input"
                   name="email_address"
                   placeholder="Twój adres email"
                   required=""
@@ -67,6 +79,7 @@ class Signup extends React.Component {
               </div>
               <button
                 data-element="submit"
+                className="formkit-submit formkit-submit"
                 style={{
                   color: "rgb(255, 255, 255)",
                   backgroundColor: "rgb(22, 119, 190)",
@@ -74,7 +87,7 @@ class Signup extends React.Component {
                   fontWeight: 400,
                 }}
               >
-                <div>
+                <div className="formkit-spinner">
                   <div></div>
                   <div></div>
                   <div></div>
@@ -84,6 +97,7 @@ class Signup extends React.Component {
             </div>
 
             <div
+              className="formkit-guarantee"
               data-element="guarantee"
               style={{
                 color: "rgb(77, 77, 77)",
