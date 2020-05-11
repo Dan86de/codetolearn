@@ -6,7 +6,6 @@ import SignUp from "../components/SignUp/SignUp"
 const IndexPage = () => (
   <>
     <HeroSection></HeroSection>
-    <SignUp></SignUp>
   </>
 )
 
