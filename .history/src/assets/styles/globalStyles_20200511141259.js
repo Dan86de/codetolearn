@@ -48,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fontBody);
   }
   a {
+    text-decoration: none;
     color: inherit;
   }
   p, ul, ol {

@@ -48,7 +48,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fontBody);
   }
   a {
-    color: inherit;
   }
   p, ul, ol {
     font-weight: 400;

@@ -68,7 +68,7 @@ const Navigation = () => {
           <MenuList>
             <MenuListItem to="/">Home</MenuListItem>
             <MenuListItem to="/blog">Blog</MenuListItem>
-            <MenuListItem to="/about">O mnie</MenuListItem>
+            <MenuListItem to="/about">About</MenuListItem>
           </MenuList>
         </MenuWrapper>
         <NewsletterBtn>Newsletter</NewsletterBtn>

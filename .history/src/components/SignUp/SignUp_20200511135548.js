@@ -12,7 +12,7 @@ const SignUpWrapper = styled.div`
 
 const SignUpForm = styled.form`
   border: 2px solid black;
-  padding: 2rem 15rem;
+  padding: 3rem 15rem;
   border-top: 13px solid black;
 `
 
@@ -20,7 +20,6 @@ const FormHeader = styled.div`
   color: var(--mainColor);
   text-align: center;
   margin: 0;
-  margin-bottom: 1rem;
   h1 {
     margin: 0;
     padding: 0;
@@ -37,41 +36,24 @@ const FormSubheader = styled.div`
   padding: 0;
 `
 
-const FormInputWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-`
-
 const FormInput = styled.input`
   color: var(--mainColor);
-  border: 1px solid black;
+  border-color: black;
+  border-radius: "4px";
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   margin: 0 1rem;
-  width: 45%;
-  &:focus {
-    outline: none;
-  }
 `
 
 const FormSbmtBtn = styled.button`
-  margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 2rem auto;
   display: block;
   color: white;
   background-color: var(--mainColor);
   padding: 0.8rem 9rem;
-  border: 2px solid black;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    color: black;
-    background-color: white;
-  }
+  border: none;
   span {
     font-family: "Montserrat";
     font-weight: 700;
@@ -81,10 +63,10 @@ const FormSbmtBtn = styled.button`
 `
 
 const SignUpGuaranteeWrapper = styled.div`
-  margin: 1rem auto;
   color: inherit;
   font-size: var(--fontBody);
   font-weight: 400;
+  margin: 0 auto;
   text-align: center;
 `
 
@@ -118,20 +100,20 @@ class Signup extends React.Component {
 
             <ul data-element="errors" data-group="alert"></ul>
             <div data-element="fields" data-stacked="false">
-              <FormInputWrapper>
-                <FormInput
-                  name="fields[first_name]"
-                  placeholder="Twoje imię"
-                  required=""
-                  type="text"
-                />
+              <div>
                 <FormInput
                   name="email_address"
                   placeholder="Twój adres email"
                   required=""
                   type="email"
                 />
-              </FormInputWrapper>
+                <FormInput
+                  name="fields[first_name]"
+                  placeholder="Twoje imię"
+                  required=""
+                  type="text"
+                />
+              </div>
               <FormSbmtBtn data-element="submit">
                 <span>Subskrybuj</span>
               </FormSbmtBtn>

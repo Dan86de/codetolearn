@@ -20,7 +20,7 @@ const FormHeader = styled.div`
   color: var(--mainColor);
   text-align: center;
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   h1 {
     margin: 0;
     padding: 0;
@@ -50,12 +50,9 @@ const FormInput = styled.input`
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   margin: 0 1rem;
   width: 45%;
-  &:focus {
-    outline: none;
-  }
 `
 
 const FormSbmtBtn = styled.button`

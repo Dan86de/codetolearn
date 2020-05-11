@@ -41,7 +41,7 @@ const FormInputWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 1rem;
 `
 
 const FormInput = styled.input`
@@ -50,28 +50,19 @@ const FormInput = styled.input`
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   margin: 0 1rem;
   width: 45%;
-  &:focus {
-    outline: none;
-  }
 `
 
 const FormSbmtBtn = styled.button`
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: block;
   color: white;
   background-color: var(--mainColor);
   padding: 0.8rem 9rem;
-  border: 2px solid black;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    color: black;
-    background-color: white;
-  }
+  border: none;
   span {
     font-family: "Montserrat";
     font-weight: 700;

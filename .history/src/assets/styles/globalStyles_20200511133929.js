@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    line-height: 1.5;
   }
   h1 {
     font-size: var(--fontH1);
@@ -48,7 +49,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fontBody);
   }
   a {
-    color: inherit;
   }
   p, ul, ol {
     font-weight: 400;
@@ -58,8 +58,8 @@ const GlobalStyle = createGlobalStyle`
   ul {
     list-style-type: square;
   }
-  input, input::placeholder {
-    font-family: 'Varela Round';
+  input {
+    font-family: 'Varela Round'
   }
 `
 

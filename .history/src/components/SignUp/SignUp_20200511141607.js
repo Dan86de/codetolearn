@@ -53,9 +53,6 @@ const FormInput = styled.input`
   padding: 0.5rem 1rem 0.5rem 0.5rem;
   margin: 0 1rem;
   width: 45%;
-  &:focus {
-    outline: none;
-  }
 `
 
 const FormSbmtBtn = styled.button`

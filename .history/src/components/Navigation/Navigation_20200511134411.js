@@ -45,7 +45,7 @@ const NewsletterBtn = styled.button`
   color: white;
   font-size: var(--fontH5);
   border: 2px solid black;
-  padding: 0.8em 1.6em;
+  padding: 1.6em 2em;
   font-weight: 700;
   transition: all 0.3s linear;
   cursor: pointer;
@@ -68,7 +68,7 @@ const Navigation = () => {
           <MenuList>
             <MenuListItem to="/">Home</MenuListItem>
             <MenuListItem to="/blog">Blog</MenuListItem>
-            <MenuListItem to="/about">O mnie</MenuListItem>
+            <MenuListItem to="/about">About</MenuListItem>
           </MenuList>
         </MenuWrapper>
         <NewsletterBtn>Newsletter</NewsletterBtn>

@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    line-height: 1;
   }
   h1 {
     font-size: var(--fontH1);
@@ -48,7 +49,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fontBody);
   }
   a {
-    color: inherit;
   }
   p, ul, ol {
     font-weight: 400;

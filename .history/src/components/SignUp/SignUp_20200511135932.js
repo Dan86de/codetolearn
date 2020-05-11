@@ -20,7 +20,7 @@ const FormHeader = styled.div`
   color: var(--mainColor);
   text-align: center;
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   h1 {
     margin: 0;
     padding: 0;
@@ -46,16 +46,14 @@ const FormInputWrapper = styled.div`
 
 const FormInput = styled.input`
   color: var(--mainColor);
-  border: 1px solid black;
+  border-color: black;
+  border-radius: "4px";
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   margin: 0 1rem;
   width: 45%;
-  &:focus {
-    outline: none;
-  }
 `
 
 const FormSbmtBtn = styled.button`
@@ -65,13 +63,7 @@ const FormSbmtBtn = styled.button`
   color: white;
   background-color: var(--mainColor);
   padding: 0.8rem 9rem;
-  border: 2px solid black;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    color: black;
-    background-color: white;
-  }
+  border: none;
   span {
     font-family: "Montserrat";
     font-weight: 700;
@@ -120,16 +112,16 @@ class Signup extends React.Component {
             <div data-element="fields" data-stacked="false">
               <FormInputWrapper>
                 <FormInput
-                  name="fields[first_name]"
-                  placeholder="Twoje imię"
-                  required=""
-                  type="text"
-                />
-                <FormInput
                   name="email_address"
                   placeholder="Twój adres email"
                   required=""
                   type="email"
+                />
+                <FormInput
+                  name="fields[first_name]"
+                  placeholder="Twoje imię"
+                  required=""
+                  type="text"
                 />
               </FormInputWrapper>
               <FormSbmtBtn data-element="submit">
