@@ -4,7 +4,7 @@ import styled from "styled-components"
 const HeroSectionWrapper = styled.div`
   width: 100%;
   max-width: 1536px;
-  height: 87vh;
+  height: 85vh;
   margin: 0 auto;
   display: flex;
   align-items: center;
