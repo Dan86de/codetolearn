@@ -13,6 +13,7 @@ const HeroSectionTextWrapper = styled.div`
   width: 100%;
   h1 {
     line-height: 1.2;
+    font-size: var(--fontH3);
   }
   p {
     font-size: var(--fontBody);

@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 const NavigationWrapper = styled.div`
   display: none;
   @media only screen and (min-width: 768px) {
-    display: block;
     width: 100%;
     max-width: 1536px;
     margin: 0 auto;

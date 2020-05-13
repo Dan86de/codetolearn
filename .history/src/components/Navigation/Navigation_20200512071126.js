@@ -4,15 +4,12 @@ import { Link } from "gatsby"
 
 const NavigationWrapper = styled.div`
   display: none;
-  @media only screen and (min-width: 768px) {
-    display: block;
-    width: 100%;
-    max-width: 1536px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  width: 100%;
+  max-width: 1536px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 const LogoWrapper = styled.div`

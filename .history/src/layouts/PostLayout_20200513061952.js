@@ -85,7 +85,7 @@ export const query = graphql`
 const PostLayout = ({ data }) => {
   let postDate = new Date(data.datoCmsArticle.meta.publishedAt)
   const options = {
-    weekday: "long",
+    weekday: "short",
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -96,7 +96,10 @@ const PostLayout = ({ data }) => {
         <ArticleFeaturedImage fluid={data.datoCmsArticle.featuredImage.fluid} />
         <HeroTextWrapper>
           <h1>{data.datoCmsArticle.title}</h1>
-          <p>{postDate.toLocaleDateString("pl-PL", options)}</p>
+          <p>
+            {postDate.toLocaleDateString("pl-PL", options)} {", "}
+            {data.datoCmsArticle.author}
+          </p>
         </HeroTextWrapper>
       </ArticleHeroWrapper>
 

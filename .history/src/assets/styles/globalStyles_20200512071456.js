@@ -2,19 +2,13 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --fontH1: 1.728em;
-    --fontH2: 1.44em;
-    --fontH3: 1.33em;
-    --fontH4: 1.22em;
-    --fontH5: 1.11em;
-    --fontBody: 1em;
     @media only screen and (min-width: 768px) {
       --fontH1: 2.488em;
-      --fontH2: 2.074em;
-      --fontH3: 1.728em;
-      --fontH4: 1.44em;
-      --fontH5: 1.2em;
-      --fontBody: 1em;
+    --fontH2: 2.074em;
+    --fontH3: 1.728em;
+    --fontH4: 1.44em;
+    --fontH5: 1.2em;
+    --fontBody: 1em;
   }
     
     --mainColor: #1C1C1C;
@@ -29,11 +23,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--mainColor);
-    @media only screen and (min-width: 768px) {
-      font-size: 18px;
-  }
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -73,7 +64,6 @@ const GlobalStyle = createGlobalStyle`
   }
   input, input::placeholder {
     font-family: 'Varela Round';
-    font-size:1rem;
   }
 `
 

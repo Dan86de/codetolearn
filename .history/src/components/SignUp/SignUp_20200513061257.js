@@ -41,7 +41,7 @@ const FormInputsWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 2rem auto;
+  margin-top: 2rem;
 `
 
 const SingleInputWrapper = styled.div`
@@ -61,7 +61,6 @@ const FormInput = styled.input`
   font-family: "Varela Round";
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 0.5rem 0.5rem;
-  width: 100%;
   &:focus {
     outline: none;
   }

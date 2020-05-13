@@ -85,7 +85,7 @@ export const query = graphql`
 const PostLayout = ({ data }) => {
   let postDate = new Date(data.datoCmsArticle.meta.publishedAt)
   const options = {
-    weekday: "long",
+    weekday: "short",
     year: "numeric",
     month: "long",
     day: "numeric",

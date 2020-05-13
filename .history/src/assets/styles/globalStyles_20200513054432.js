@@ -73,7 +73,6 @@ const GlobalStyle = createGlobalStyle`
   }
   input, input::placeholder {
     font-family: 'Varela Round';
-    font-size:1rem;
   }
 `
 

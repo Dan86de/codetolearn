@@ -4,6 +4,7 @@ import styled from "styled-components"
 const HeroSectionWrapper = styled.div`
   width: 100%;
   max-width: 1536px;
+  height: 87vh;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -15,7 +16,7 @@ const HeroSectionTextWrapper = styled.div`
     line-height: 1.2;
   }
   p {
-    font-size: var(--fontBody);
+    font-size: var(--fontH5);
     color: #555555;
     line-height: 1.5;
   }

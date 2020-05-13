@@ -31,9 +31,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 16px;
     color: var(--mainColor);
-    @media only screen and (min-width: 768px) {
-      font-size: 18px;
-  }
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -73,7 +70,6 @@ const GlobalStyle = createGlobalStyle`
   }
   input, input::placeholder {
     font-family: 'Varela Round';
-    font-size:1rem;
   }
 `
 

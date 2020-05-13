@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     color: var(--mainColor);
     @media only screen and (min-width: 768px) {
-      font-size: 18px;
+      font-size: 21px;
   }
   }
   *, *:before, *:after {

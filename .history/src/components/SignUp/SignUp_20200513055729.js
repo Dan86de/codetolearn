@@ -12,7 +12,7 @@ const SignUpWrapper = styled.div`
 
 const SignUpForm = styled.form`
   border: 2px solid black;
-  padding: 2rem 10rem;
+  padding: 2rem 15rem;
   border-top: 13px solid black;
 `
 
@@ -40,17 +40,12 @@ const FormSubheader = styled.div`
 const FormInputsWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
-  margin: 2rem auto;
+  justify-content: space-between;
+  margin-top: 2rem;
 `
 
 const SingleInputWrapper = styled.div`
-  margin: 0 1rem;
-`
-
-const InputLabel = styled.label`
-  font-weight: 600;
-  margin-right: 1rem;
+  width: 50%;
 `
 
 const FormInput = styled.input`
@@ -59,9 +54,9 @@ const FormInput = styled.input`
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  margin-top: 0.5rem;
   padding: 0.5rem 1rem 0.5rem 0.5rem;
-  width: 100%;
+  margin: 0 1rem;
+  width: 45%;
   &:focus {
     outline: none;
   }
@@ -129,7 +124,7 @@ class Signup extends React.Component {
             <div data-element="fields" data-stacked="false">
               <FormInputsWrapper>
                 <SingleInputWrapper>
-                  <InputLabel htmlFor="name">Twoje imię:</InputLabel>
+                  <label htmlFor="name">Twoje imię:</label>
                   <FormInput
                     id="name"
                     name="fields[first_name]"
@@ -139,7 +134,7 @@ class Signup extends React.Component {
                   />
                 </SingleInputWrapper>
                 <SingleInputWrapper>
-                  <InputLabel htmlFor="email">Twój email:</InputLabel>
+                  <label htmlFor="email">Twój email:</label>
                   <FormInput
                     id="email"
                     name="email_address"

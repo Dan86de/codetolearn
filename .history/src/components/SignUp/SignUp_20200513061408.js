@@ -61,7 +61,7 @@ const FormInput = styled.input`
   font-family: "Varela Round";
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 0.5rem 0.5rem;
-  width: 100%;
+  width: 80%;
   &:focus {
     outline: none;
   }

@@ -12,7 +12,7 @@ const SignUpWrapper = styled.div`
 
 const SignUpForm = styled.form`
   border: 2px solid black;
-  padding: 2rem 10rem;
+  padding: 2rem 15rem;
   border-top: 13px solid black;
 `
 
@@ -41,11 +41,11 @@ const FormInputsWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 2rem auto;
+  margin-top: 2rem;
 `
 
 const SingleInputWrapper = styled.div`
-  margin: 0 1rem;
+  flex-basis: 50%;
 `
 
 const InputLabel = styled.label`
@@ -61,7 +61,6 @@ const FormInput = styled.input`
   font-family: "Varela Round";
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 0.5rem 0.5rem;
-  width: 100%;
   &:focus {
     outline: none;
   }
