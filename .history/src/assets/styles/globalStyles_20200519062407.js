@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-weight: 400;
-    line-height: 1.65;
+  line-height: 1.65;
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   }
   h1,h2,h3,h4,h5,h6 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     margin: 2.75rem 0 1.05rem;
     padding:0;
     line-height: 1.15;

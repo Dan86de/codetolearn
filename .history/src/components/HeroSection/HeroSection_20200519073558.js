@@ -16,9 +16,6 @@ const HeroSectionContentWrapper = styled.div`
 
 const HeroSectionTextWrapper = styled.div`
   width: 100%;
-  h2 {
-    margin: 0;
-  }
   p {
     font-size: var(--fontBody);
     color: #555555;

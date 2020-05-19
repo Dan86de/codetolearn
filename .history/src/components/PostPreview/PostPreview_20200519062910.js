@@ -26,14 +26,8 @@ const PrewievTextWrapper = styled.div`
   justify-content: flex-start;
   height: 100%;
   padding: 0 1rem;
-  h4 {
-    margin: 1rem 0rem 0rem 0rem;
-  }
   h5 {
     color: rgba(0, 0, 0, 0.5);
-    margin: 0 0 1rem 0;
-    font-size: 1em;
-    font-weight: 500;
   }
   p {
     line-height: 1.2;

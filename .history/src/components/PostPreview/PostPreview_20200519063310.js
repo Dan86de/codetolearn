@@ -33,7 +33,7 @@ const PrewievTextWrapper = styled.div`
     color: rgba(0, 0, 0, 0.5);
     margin: 0 0 1rem 0;
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 400;
   }
   p {
     line-height: 1.2;

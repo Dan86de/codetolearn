@@ -30,7 +30,6 @@ const FormSubheader = styled.div`
 
 const FormInputsWrapper = styled.div`
   width: 100%;
-  max-width: 1280px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -52,7 +51,7 @@ const FormInput = styled.input`
   font-size: var(--fontBody);
   font-family: "Varela Round";
   margin-top: 0.5em;
-  padding: 0.5em;
+  padding: 0.2em;
   width: 100%;
   &:focus {
     outline: none;

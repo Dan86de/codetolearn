@@ -3,21 +3,14 @@ import styled from "styled-components"
 
 const HeroSectionWrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 65px);
-  margin: 0 auto;
-  background-color: #d5d5d5;
-`
-
-const HeroSectionContentWrapper = styled.div`
-  width: 100%;
   max-width: 1208px;
   margin: 0 auto;
 `
 
 const HeroSectionTextWrapper = styled.div`
   width: 100%;
-  h2 {
-    margin: 0;
+  h1 {
+    line-height: 1.2;
   }
   p {
     font-size: var(--fontBody);
@@ -63,29 +56,27 @@ const HeroSection = () => {
   return (
     <>
       <HeroSectionWrapper>
-        <HeroSectionContentWrapper>
-          <HeroSectionTextWrapper>
-            <h2>Cześć, nazywam się Daniel Noworyta i chcę być programistą.</h2>
-            <p>
-              Odkąd pamiętam interesowały mnie strony internetowe i biznes w
-              internecie. Opowiadam o swojej internetowej podróży na moim{" "}
-              <a
-                href="http://codetolearn.pl/blog"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                blogu
-              </a>{" "}
-              i{" "}
-              <a
-                href="http://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                kanale YouTube.
-              </a>
-            </p>
-          </HeroSectionTextWrapper>
+        <HeroSectionTextWrapper>
+          <h2>Cześć, nazywam się Daniel Noworyta i chcę być programistą.</h2>
+          <p>
+            Odkąd pamiętam interesowały mnie strony internetowe i biznes w
+            internecie. Opowiadam o swojej internetowej podróży na moim{" "}
+            <a
+              href="http://codetolearn.pl/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              blogu
+            </a>{" "}
+            i{" "}
+            <a
+              href="http://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              kanale YouTube.
+            </a>
+          </p>
           <SocialIconsWrapper>
             <a
               href="https://www.instagram.com/codetolearn_pl/"
@@ -135,7 +126,7 @@ const HeroSection = () => {
               <span>Facebook</span>
             </a>
           </SocialIconsWrapper>
-        </HeroSectionContentWrapper>
+        </HeroSectionTextWrapper>
       </HeroSectionWrapper>
     </>
   )

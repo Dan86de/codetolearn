@@ -33,7 +33,7 @@ const FormInputsWrapper = styled.div`
   max-width: 1280px;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 1em auto;
 `
 
 const SingleInputWrapper = styled.div`

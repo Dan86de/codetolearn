@@ -12,7 +12,7 @@ const SignUpWrapper = styled.div`
 
 const SignUpForm = styled.form`
   border: 2px solid black;
-  padding: 1rem 5rem;
+  padding: 2rem 10rem;
   border-top: 13px solid black;
 `
 
@@ -25,15 +25,15 @@ const FormSubheader = styled.div`
   color: var(--mainColor);
   font-size: var(--fontH5);
   text-align: center;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 `
 
 const FormInputsWrapper = styled.div`
   width: 100%;
-  max-width: 1280px;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 2rem auto;
 `
 
 const SingleInputWrapper = styled.div`
@@ -51,8 +51,8 @@ const FormInput = styled.input`
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  margin-top: 0.5em;
-  padding: 0.5em;
+  margin-top: 0.5rem;
+  padding: 0.8rem 0.5rem 0.5rem 0.5rem;
   width: 100%;
   &:focus {
     outline: none;

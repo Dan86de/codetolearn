@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
       --fontBody: 1em;
   }
     
-    --mainColor: #1C1C1C;
+    --mainColor: #0B0C26;
     --textOnMain: #E2E2E2;
 
 }
