@@ -16,7 +16,6 @@ const PreviewWrapper = styled(Link)`
 
 const PreviewImage = styled(Img)`
   width: 100%;
-  height: 300px;
   object-fit: cover;
 `
 
@@ -25,18 +24,16 @@ const PrewievTextWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
   h4 {
-    margin: 1rem 0rem 0rem 0rem;
+    margin: 0;
+    padding: 0;
   }
   h5 {
     color: rgba(0, 0, 0, 0.5);
-    margin: 0 0 1rem 0;
-    font-size: 1em;
-    font-weight: 500;
-  }
-  p {
-    line-height: 1.2;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
   }
 `
 
@@ -58,9 +55,9 @@ const PostPreview = props => {
     <PreviewWrapper to={`/blog/${slugifiedTitle}`} key={props.id}>
       <PreviewImage fluid={props.featuredImage}></PreviewImage>
       <PrewievTextWrapper>
-        <h4>{props.title}</h4>
+        <h2>{props.title}</h2>
         <DateContainer>
-          <h5>{postDate.toLocaleDateString("pl-PL", options)}</h5>
+          <p>{postDate.toLocaleDateString("pl-PL", options)}</p>
         </DateContainer>
         <p>{props.excerpt}</p>
       </PrewievTextWrapper>

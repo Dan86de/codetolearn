@@ -12,28 +12,36 @@ const SignUpWrapper = styled.div`
 
 const SignUpForm = styled.form`
   border: 2px solid black;
-  padding: 1rem 5rem;
+  padding: 2rem 10rem;
   border-top: 13px solid black;
 `
 
 const FormHeader = styled.div`
   color: var(--mainColor);
   text-align: center;
+  margin: 0;
+  margin-bottom: 1rem;
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+  p {
+  }
 `
 
 const FormSubheader = styled.div`
   color: var(--mainColor);
   font-size: var(--fontH5);
   text-align: center;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 `
 
 const FormInputsWrapper = styled.div`
   width: 100%;
-  max-width: 1280px;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 2rem auto;
 `
 
 const SingleInputWrapper = styled.div`
@@ -51,8 +59,8 @@ const FormInput = styled.input`
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  margin-top: 0.5em;
-  padding: 0.5em;
+  margin-top: 0.5rem;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
   width: 100%;
   &:focus {
     outline: none;
@@ -93,7 +101,7 @@ class Signup extends React.Component {
   render() {
     return (
       <SignUpWrapper>
-        <h2>Zostańmy w kontakcie!</h2>
+        <h1>Zostańmy w kontakcie!</h1>
         <SignUpForm
           action="https://app.convertkit.com/forms/1343076/subscriptions"
           method="post"
@@ -106,7 +114,7 @@ class Signup extends React.Component {
           <div style={{ opacity: 0.2 }}></div>
           <div data-style="minimal">
             <FormHeader data-element="header">
-              <h2>Zapisz się na newsletter CodeToLearn!</h2>
+              <h1>Zapisz się na newsletter CodeToLearn!</h1>
             </FormHeader>
 
             <FormSubheader data-element="subheader">
@@ -121,21 +129,23 @@ class Signup extends React.Component {
             <div data-element="fields" data-stacked="false">
               <FormInputsWrapper>
                 <SingleInputWrapper>
-                  <InputLabel htmlFor="name">Twoje imię:</InputLabel>
+                  <InputLabel htmlFor="name">Tutaj wpisz swoje imię</InputLabel>
                   <FormInput
                     id="name"
                     name="fields[first_name]"
-                    placeholder="Tutaj wpisz swoje imię"
+                    placeholder="Twoje imię"
                     required=""
                     type="text"
                   />
                 </SingleInputWrapper>
                 <SingleInputWrapper>
-                  <InputLabel htmlFor="email">Twój email:</InputLabel>
+                  <InputLabel htmlFor="email">
+                    Tutaj wpisz swój email
+                  </InputLabel>
                   <FormInput
                     id="email"
                     name="email_address"
-                    placeholder="Tutaj wpisz swój adres email"
+                    placeholder="Twój adres email"
                     required=""
                     type="email"
                   />

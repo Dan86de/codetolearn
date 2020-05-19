@@ -66,7 +66,7 @@ const NewsletterBtn = styled.button`
   }
 `
 
-const Navigation = props => {
+const Navigation = () => {
   return (
     <>
       <NavigationWrapper>
@@ -75,7 +75,7 @@ const Navigation = props => {
             CodeToLearn
           </Link>
         </LogoWrapper>
-        <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
+        <MobileMenuDrawerButton />
         <MenuWrapper>
           <MenuList>
             <MenuListItem to="/">Home</MenuListItem>

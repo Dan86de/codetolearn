@@ -1,19 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import MobileMenuDrawerButton from "../Navigation/MobileMenuDrawerButton"
 
 const NavigationWrapper = styled.div`
+  display: block;
   width: 100%;
+  height: 65px;
+  max-width: 1032px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
-  margin: 0 auto;
-  max-width: 1032px;
-  @media only screen and (min-width: 768px) {
-    height: 65px;
-  }
 `
 
 const LogoWrapper = styled.div`
@@ -66,7 +63,7 @@ const NewsletterBtn = styled.button`
   }
 `
 
-const Navigation = props => {
+const Navigation = () => {
   return (
     <>
       <NavigationWrapper>
@@ -75,7 +72,6 @@ const Navigation = props => {
             CodeToLearn
           </Link>
         </LogoWrapper>
-        <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
         <MenuWrapper>
           <MenuList>
             <MenuListItem to="/">Home</MenuListItem>

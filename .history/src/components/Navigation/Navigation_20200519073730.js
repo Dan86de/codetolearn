@@ -1,18 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import MobileMenuDrawerButton from "../Navigation/MobileMenuDrawerButton"
 
 const NavigationWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 50px;
-  margin: 0 auto;
-  max-width: 1032px;
+  display: none;
   @media only screen and (min-width: 768px) {
+    display: block;
+    width: 100%;
     height: 65px;
+    max-width: 1032px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 `
 
@@ -49,24 +49,21 @@ const MenuListItem = styled(Link)`
 `
 
 const NewsletterBtn = styled.button`
-  display: none;
-  @media only screen and (min-width: 768px) {
-    background-color: black;
-    color: white;
-    font-size: var(--fontBody);
-    border: 2px solid black;
-    padding: 0.8em 1.6em;
-    font-weight: 700;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    &:hover {
-      background-color: white;
-      color: black;
-    }
+  background-color: black;
+  color: white;
+  font-size: var(--fontBody);
+  border: 2px solid black;
+  padding: 0.8em 1.6em;
+  font-weight: 700;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
   }
 `
 
-const Navigation = props => {
+const Navigation = () => {
   return (
     <>
       <NavigationWrapper>
@@ -75,7 +72,6 @@ const Navigation = props => {
             CodeToLearn
           </Link>
         </LogoWrapper>
-        <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
         <MenuWrapper>
           <MenuList>
             <MenuListItem to="/">Home</MenuListItem>

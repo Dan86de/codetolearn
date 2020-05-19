@@ -66,7 +66,7 @@ const NewsletterBtn = styled.button`
   }
 `
 
-const Navigation = props => {
+const Navigation = () => {
   return (
     <>
       <NavigationWrapper>

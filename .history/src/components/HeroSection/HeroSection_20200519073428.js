@@ -5,7 +5,7 @@ const HeroSectionWrapper = styled.div`
   width: 100%;
   height: calc(100vh - 65px);
   margin: 0 auto;
-  background-color: #d5d5d5;
+  border: 2px solid black;
 `
 
 const HeroSectionContentWrapper = styled.div`
@@ -16,8 +16,8 @@ const HeroSectionContentWrapper = styled.div`
 
 const HeroSectionTextWrapper = styled.div`
   width: 100%;
-  h2 {
-    margin: 0;
+  h1 {
+    line-height: 1.2;
   }
   p {
     font-size: var(--fontBody);

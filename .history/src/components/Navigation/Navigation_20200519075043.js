@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import MobileMenuDrawerButton from "../Navigation/MobileMenuDrawerButton"
+import MobileMenuDrawerButton from "./MobileMenuDrawer/MobileMenuDrawerButton"
 
 const NavigationWrapper = styled.div`
   width: 100%;
@@ -66,7 +66,7 @@ const NewsletterBtn = styled.button`
   }
 `
 
-const Navigation = props => {
+const Navigation = () => {
   return (
     <>
       <NavigationWrapper>
@@ -75,7 +75,7 @@ const Navigation = props => {
             CodeToLearn
           </Link>
         </LogoWrapper>
-        <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
+        <MobileMenuDrawerButton />
         <MenuWrapper>
           <MenuList>
             <MenuListItem to="/">Home</MenuListItem>

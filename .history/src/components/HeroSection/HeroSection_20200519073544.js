@@ -16,7 +16,8 @@ const HeroSectionContentWrapper = styled.div`
 
 const HeroSectionTextWrapper = styled.div`
   width: 100%;
-  h2 {
+  h1 {
+    line-height: 1.2;
     margin: 0;
   }
   p {

@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import GlobalStyle from "../assets/styles/globalStyles"
 import Navigation from "../components/Navigation/Navigation"
 import Footer from "../components/Footer/Footer"
