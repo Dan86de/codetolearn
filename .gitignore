@@ -58,6 +58,7 @@ typings/
 .cache/
 public
 .history/
+.history
 
 # Mac files
 .DS_Store
