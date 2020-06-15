@@ -16,10 +16,8 @@ const GlobalStyle = createGlobalStyle`
       --fontH5: 1.2em;
       --fontBody: 1em;
   }
-    
     --mainColor: #1C1C1C;
     --textOnMain: #E2E2E2;
-
 }
   html {
     box-sizing: border-box;
