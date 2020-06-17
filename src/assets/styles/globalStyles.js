@@ -16,8 +16,8 @@ const GlobalStyle = createGlobalStyle`
       --fontH5: 1.2em;
       --fontBody: 1em;
   }
-    --mainColor: #1C1C1C;
-    --textOnMain: #E2E2E2;
+    --mainColor: #0B1326;
+    --textOnMain: #E6EAF2;
 }
   html {
     box-sizing: border-box;
@@ -38,11 +38,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin: 2.75rem 0 1.05rem;
-    padding:0;
-    line-height: 1.15;
   }
   h1 {
     font-size: var(--fontH1);
