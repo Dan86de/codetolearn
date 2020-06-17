@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: square;
   }
   input, input::placeholder {
-    font-family: 'Varela Round';
+    font-family: aktiv-grotesk, sans-serif;
     font-size: 1rem;
   }
   .contentWrapper {
