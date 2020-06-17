@@ -1,45 +1,43 @@
 import React, { Component } from "react"
 import GlobalStyle from "../assets/styles/globalStyles"
-import styled from "styled-components"
 import Navigation from "../components/Navigation/Navigation"
 import Footer from "../components/Footer/Footer"
 import MobileMenuDrawer from "../components/Navigation/MobileMenuDrawer"
-import Backdrop from "../components/Backdrop/Backdrop"
 
 class MainLayout extends Component {
   constructor(props) {
     super(props)
     this.state = {
       mobileMenuDrawerOpen: false,
+      scrollDisable: false,
     }
   }
 
   drawerToggleClickHandler = () => {
     this.setState(prevState => {
-      return { mobileMenuDrawerOpen: !prevState.mobileMenuDrawerOpen }
+      return {
+        mobileMenuDrawerOpen: !prevState.mobileMenuDrawerOpen,
+        scrollDisable: !prevState.scrollDisable,
+      }
     })
   }
 
   backdropClickHandler = () => {
-    this.setState({ mobileMenuDrawerOpen: false })
+    this.setState({ mobileMenuDrawerOpen: false, scrollDisable: false })
   }
 
   render() {
-    let backdrop
-
-    if (this.state.mobileMenuDrawerOpen) {
-      backdrop = <Backdrop click={this.backdropClickHandler} />
-    }
     return (
       <>
-        <GlobalStyle />
-        {backdrop}
+        <GlobalStyle scroll={this.state.scrollDisable} />
         <MobileMenuDrawer
           linkClick={this.backdropClickHandler}
           show={this.state.mobileMenuDrawerOpen}
+          click={this.backdropClickHandler}
         />
         <Navigation
           mobileMenuDrawerClickHandler={this.drawerToggleClickHandler}
+          state={this.state}
         />
         {this.props.children}
         <Footer />
