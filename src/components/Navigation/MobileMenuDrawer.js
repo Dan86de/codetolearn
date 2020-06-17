@@ -32,12 +32,39 @@ const NavigationList = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   z-index: 998;
+  p {
+    color: var(--textOnMain);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.25;
+    padding-bottom: 20px;
+  }
   a {
     color: var(--textOnMain);
+    display: block;
     text-decoration: none;
     text-transform: uppercase;
+    font-size: var(--fontH2);
+    font-weight: bold;
+    position: relative;
+    line-height: 60px;
+    letter-spacing: 2px;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: -70%;
+      width: 0;
+      height: 5px;
+      background-color: var(--textOnMain);
+      transition: all 0.5s ease-in-out;
+    }
+    &:hover::before {
+      width: 50%;
+    }
   }
 `
 
@@ -46,14 +73,15 @@ const MobileMenuDrawer = props => {
     <MobileMenuDrawerWrapper show={props.show}>
       <Backdropper click={props.click} />
       <NavigationList>
+        <p>Menu :</p>
         <Link to="/" exact="true" onClick={props.linkClick}>
-          HOME
+          Home
         </Link>
         <Link to="/blog" onClick={props.linkClick}>
-          BLOG
+          Blog
         </Link>
         <Link to="/about" onClick={props.linkClick}>
-          O MNIE
+          About Me
         </Link>
       </NavigationList>
     </MobileMenuDrawerWrapper>

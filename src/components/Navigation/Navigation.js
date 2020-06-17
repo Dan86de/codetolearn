@@ -91,8 +91,7 @@ const Navigation = props => {
           <Link to="/" exact="true">
             <h2>Daniel Noworyta</h2>
             <span>
-              <strong>Front End Developer</strong> &{" "}
-              <strong>UI Designer</strong>
+              <strong>FrontEnd Developer</strong> & <strong>UI Designer</strong>
             </span>
           </Link>
         </LogoWrapper>
