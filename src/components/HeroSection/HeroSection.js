@@ -2,17 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 const HeroSectionWrapper = styled.div`
-  width: 100%;
   height: calc(100vh - 65px);
+  width: 100%;
   margin: 0 auto;
-  background-color: #d5d5d5;
 `
 
-const HeroSectionContentWrapper = styled.div`
-  width: 100%;
-  max-width: 1208px;
-  margin: 0 auto;
-`
+const ContentWrapper = styled.div``
 
 const HeroSectionTextWrapper = styled.div`
   width: 100%;
@@ -62,12 +57,13 @@ const FacebookIcon = styled.svg`
 const HeroSection = () => {
   return (
     <HeroSectionWrapper>
-      <HeroSectionContentWrapper>
+      <ContentWrapper className={"contentWrapper"}>
         <HeroSectionTextWrapper>
-          <h2>Cześć, nazywam się Daniel Noworyta i chcę być programistą.</h2>
+          <h2>Pomogę Ci zostać programistą</h2>
           <p>
-            Odkąd pamiętam interesowały mnie strony internetowe i biznes w
-            internecie. Opowiadam o swojej internetowej podróży na moim{" "}
+            Chcesz zmienić branżę i zostać programistą? Myślisz, że nie masz
+            wystarczająco czasu i zdolności? Też tak myślałem. Opowiadam o
+            swojej internetowej podróży na moim{" "}
             <a
               href="http://codetolearn.pl/blog"
               target="_blank"
@@ -134,7 +130,7 @@ const HeroSection = () => {
             <span>Facebook</span>
           </a>
         </SocialIconsWrapper>
-      </HeroSectionContentWrapper>
+      </ContentWrapper>
     </HeroSectionWrapper>
   )
 }

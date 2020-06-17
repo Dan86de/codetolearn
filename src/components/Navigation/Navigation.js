@@ -4,21 +4,15 @@ import { Link } from "gatsby"
 import MobileMenuDrawerButton from "../Navigation/MobileMenuDrawerButton"
 
 const NavigationWrapper = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
-  margin: 0 auto;
-  max-width: 1032px;
-  @media only screen and (min-width: 768px) {
-    height: 65px;
-  }
 `
 
 const LogoWrapper = styled.div`
   flex-grow: 2;
   font-family: "Montserrat";
+  margin-top: 10px;
   a {
     font-size: var(--fontH4);
     text-decoration: none;
@@ -27,15 +21,18 @@ const LogoWrapper = styled.div`
   }
 `
 
-const MenuWrapper = styled.div``
+const MenuWrapper = styled.div`
+  @media only screen and (min-width: 768px) {
+    padding: 1em 0px;
+  }
+`
 
 const MenuList = styled.ul`
   display: none;
+  font-family: "Montserrat";
   @media only screen and (min-width: 768px) {
     display: flex;
     align-items: center;
-    margin-right: 2em;
-    font-family: "Montserrat";
   }
 `
 
@@ -46,6 +43,9 @@ const MenuListItem = styled(Link)`
   color: inherit;
   padding: 0em 1.5em;
   cursor: pointer;
+  &:last-of-type {
+    padding-right: 0;
+  }
 `
 
 const NewsletterBtn = styled.button`
@@ -69,10 +69,10 @@ const NewsletterBtn = styled.button`
 const Navigation = props => {
   return (
     <>
-      <NavigationWrapper>
+      <NavigationWrapper className={"contentWrapper"}>
         <LogoWrapper>
           <Link to="/" exact="true">
-            CodeToLearn
+            ProgramistaFrontEnd
           </Link>
         </LogoWrapper>
         <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
