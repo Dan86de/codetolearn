@@ -1,16 +1,24 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import Backdropper from "../Backdrop/Backdrop"
 
 const MobileMenuDrawerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
-  z-index: 100;
-  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0 0.5);
-  transition: transform 0.3s ease-out;
+  height: 100vh;
+  margin: 0 auto;
+  color: var(--textOnMain);
+  opacity: 0.95;
+  background-color: var(--mainColor);
+  transition: all 0.3s linear;
+  z-index: 996;
   ${props => {
     if (props.show) {
       return `transform: translateX(0%);`
@@ -25,11 +33,18 @@ const NavigationList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 998;
+  a {
+    color: var(--textOnMain);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 `
 
 const MobileMenuDrawer = props => {
   return (
     <MobileMenuDrawerWrapper show={props.show}>
+      <Backdropper click={props.click} />
       <NavigationList>
         <Link to="/" exact="true" onClick={props.linkClick}>
           HOME

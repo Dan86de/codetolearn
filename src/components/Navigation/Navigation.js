@@ -1,68 +1,83 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import MobileMenuDrawerButton from "../Navigation/MobileMenuDrawerButton"
+import MenuDrawerButton from "../Navigation/MenuDrawerButton"
 
 const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  span {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
 `
 
 const LogoWrapper = styled.div`
   flex-grow: 2;
-  font-family: "Montserrat";
   margin-top: 10px;
+  z-index: 999;
+  &.active {
+    color: white;
+  }
+  cursor: pointer;
   a {
     font-size: var(--fontH4);
     text-decoration: none;
     color: inherit;
     font-weight: 700;
-  }
-`
-
-const MenuWrapper = styled.div`
-  @media only screen and (min-width: 768px) {
-    padding: 1em 0px;
-  }
-`
-
-const MenuList = styled.ul`
-  display: none;
-  font-family: "Montserrat";
-  @media only screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-  }
-`
-
-const MenuListItem = styled(Link)`
-  font-weight: 700;
-  font-size: var(--fontBody);
-  text-decoration: none;
-  color: inherit;
-  padding: 0em 1.5em;
-  cursor: pointer;
-  &:last-of-type {
-    padding-right: 0;
-  }
-`
-
-const NewsletterBtn = styled.button`
-  display: none;
-  @media only screen and (min-width: 768px) {
-    background-color: black;
-    color: white;
-    font-size: var(--fontBody);
-    border: 2px solid black;
-    padding: 0.8em 1.6em;
-    font-weight: 700;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    &:hover {
-      background-color: white;
-      color: black;
+    margin-top: 10px;
+    h2 {
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+      line-height: 10px;
+      margin-top: 10px;
     }
+    span {
+      font-size: 10px;
+      opacity: 0.75;
+      text-transform: none;
+      strong {
+        text-transform: uppercase;
+      }
+    }
+  }
+`
+
+const MenuButtonWrapper = styled.a`
+  display: flex;
+  cursor: pointer;
+  z-index: 999;
+  color: var(--mainColor);
+  span {
+    transition: all 0.15s linear;
+  }
+
+  &.active {
+    color: var(--textOnMain);
+    opacity: 0.5;
+  }
+  &:hover span {
+    opacity: 0.5;
+  }
+  &:hover b {
+    opacity: 0.5;
+    &:focus {
+      outline: none;
+    }
+  }
+  &.active:hover {
+    color: white;
+    opacity: 1;
+  }
+  &.active:hover b {
+    opacity: 1;
+  }
+  &.active:hover span {
+    opacity: 1;
   }
 `
 
@@ -70,20 +85,24 @@ const Navigation = props => {
   return (
     <>
       <NavigationWrapper className={"contentWrapper"}>
-        <LogoWrapper>
+        <LogoWrapper
+          className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+        >
           <Link to="/" exact="true">
-            ProgramistaFrontEnd
+            <h2>Daniel Noworyta</h2>
+            <span>
+              <strong>Front End Developer</strong> &{" "}
+              <strong>UI Designer</strong>
+            </span>
           </Link>
         </LogoWrapper>
-        <MobileMenuDrawerButton click={props.mobileMenuDrawerClickHandler} />
-        <MenuWrapper>
-          <MenuList>
-            <MenuListItem to="/">Home</MenuListItem>
-            <MenuListItem to="/blog">Blog</MenuListItem>
-            <MenuListItem to="/about">O mnie</MenuListItem>
-          </MenuList>
-        </MenuWrapper>
-        <NewsletterBtn>Newsletter</NewsletterBtn>
+        <MenuButtonWrapper
+          onClick={props.mobileMenuDrawerClickHandler}
+          className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+        >
+          <span>{props.state.mobileMenuDrawerOpen ? "Close" : "Menu"}</span>
+          <MenuDrawerButton onActive={props.state.mobileMenuDrawerOpen} />
+        </MenuButtonWrapper>
       </NavigationWrapper>
     </>
   )

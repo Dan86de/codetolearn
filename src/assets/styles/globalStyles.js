@@ -2,47 +2,43 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --fontH1: 1.728em;
-    --fontH2: 1.44em;
-    --fontH3: 1.33em;
-    --fontH4: 1.22em;
-    --fontH5: 1.11em;
+    --fontH1: 59px;
+    --fontH2: 37px;
+    --fontH3: 23px;
     --fontBody: 1em;
+    --mainColor: #0B1326;
+    --textOnMain: #E6EAF2;
     @media only screen and (min-width: 768px) {
-      --fontH1: 2.488em;
-      --fontH2: 2.074em;
-      --fontH3: 1.728em;
-      --fontH4: 1.44em;
-      --fontH5: 1.2em;
+      --fontH1: 76px;
+      --fontH2: 47px;
+      --fontH3: 29px;
       --fontBody: 1em;
+    }
   }
-    --mainColor: #1C1C1C;
-    --textOnMain: #E2E2E2;
-}
   html {
-    box-sizing: border-box;
-    position: relative;
+    box-sizing: border-box;  
   }
   body {
-    font-weight: 400;
+    width:100%;
     line-height: 1.65;
     margin: 0;
     padding: 0;
     font-size: 14px;
     color: var(--mainColor);
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
     @media only screen and (min-width: 768px) {
       font-size: 16px;
     }
+    position: ${props => (!props.scroll ? "static" : "fixed")};
+    overflow-y: ${props => (!props.scroll ? "auto" : "scroll")};
   }
   *, *:before, *:after {
     box-sizing: inherit;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
     margin: 2.75rem 0 1.05rem;
-    padding:0;
-    line-height: 1.15;
   }
   h1 {
     font-size: var(--fontH1);
@@ -53,14 +49,9 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: var(--fontH3);
   }
-  h4 {
-    font-size: var(--fontH4);
-  }
-  h5 {
-    font-size: var(--fontH5);
-  }
   p {
     font-size: var(--fontBody);
+    margin-bottom:1.15rem;
   }
   a {
     color: inherit;

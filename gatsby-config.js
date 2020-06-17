@@ -11,6 +11,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-layout`,
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: "stj4ygb",
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATO_API_TOKEN,
