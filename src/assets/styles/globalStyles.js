@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
 }
   html {
     box-sizing: border-box;
-    font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
   }
   body {
@@ -29,11 +28,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.65;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--mainColor);
     @media only screen and (min-width: 768px) {
-      font-size: 18px;
-  }
+      font-size: 16px;
+    }
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -76,7 +75,22 @@ const GlobalStyle = createGlobalStyle`
   }
   input, input::placeholder {
     font-family: 'Varela Round';
-    font-size:1rem;
+    font-size: 1rem;
+  }
+  .contentWrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    @media only screen and (min-width: 768px) {
+      padding: 0;
+      max-width: 708px;
+    }
+    @media only screen and (min-width: 1280px) {
+      max-width: 1180px;
+    }
+    @media only screen and (min-width: 1920px) {
+      max-width: 1540px;
+    }
   }
 `
 
