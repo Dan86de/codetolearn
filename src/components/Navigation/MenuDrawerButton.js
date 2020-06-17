@@ -5,26 +5,20 @@ const ToggleButton = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-top: 10px;
   height: 25px;
   width: 30px;
   background: transparent;
   border: none;
-  cursor: pointer;
-  margin-top: 10px;
-  &:focus {
-    outline: none;
-  }
-  @media (min-width: 768px) {
-    display: none;
-  }
 `
 
 const ToggleButtonLine = styled.div`
   width: 30px;
   height: 3px;
-  background-color: #384f47;
+  background-color: var(--mainColor);
 `
-const MobileMenuDrawerButton = props => {
+
+const MenuDrawerButton = props => {
   return (
     <ToggleButton onClick={props.click}>
       <ToggleButtonLine></ToggleButtonLine>
@@ -34,4 +28,4 @@ const MobileMenuDrawerButton = props => {
   )
 }
 
-export default MobileMenuDrawerButton
+export default MenuDrawerButton
