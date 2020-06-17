@@ -18,6 +18,7 @@ const PreviewImage = styled(Img)`
   width: 100%;
   height: 300px;
   object-fit: cover;
+  position: relative;
 `
 
 const PrewievTextWrapper = styled.div`
