@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle`
     --fontH3: 23px;
     --fontBody: 1em;
     --mainColor: #0B1326;
+    --secondaryColor: #2C4D99;
+    --mainGray: #5C616E;
+    --secondaryGray : #ADB0B6;
     --textOnMain: #E6EAF2;
     @media only screen and (min-width: 768px) {
       --fontH1: 76px;

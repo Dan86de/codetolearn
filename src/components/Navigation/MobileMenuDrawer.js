@@ -15,7 +15,7 @@ const MobileMenuDrawerWrapper = styled.div`
   height: 100vh;
   margin: 0 auto;
   color: var(--textOnMain);
-  opacity: 0.95;
+  opacity: 0.99;
   background-color: var(--mainColor);
   transition: all 0.3s linear;
   z-index: 996;

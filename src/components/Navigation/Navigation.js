@@ -7,6 +7,7 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   span {
     text-transform: uppercase;
     font-weight: bold;
@@ -17,7 +18,7 @@ const NavigationWrapper = styled.div`
 
 const LogoWrapper = styled.div`
   flex-grow: 2;
-  margin-top: 10px;
+  margin-top: 2em;
   z-index: 999;
   &.active {
     color: white;
@@ -30,19 +31,20 @@ const LogoWrapper = styled.div`
     font-weight: 700;
     margin-top: 10px;
     h2 {
-      font-size: 24px;
+      font-size: 29px;
       margin: 0;
       padding: 0;
       line-height: 10px;
       margin-top: 10px;
+      margin-bottom: 4px;
+      font-weight: bold;
     }
     span {
-      font-size: 10px;
-      opacity: 0.75;
-      text-transform: none;
-      strong {
-        text-transform: uppercase;
-      }
+      font-size: 12px;
+      color: var(--mainGray);
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.3em;
     }
   }
 `
@@ -89,9 +91,9 @@ const Navigation = props => {
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
         >
           <Link to="/" exact="true">
-            <h2>Daniel Noworyta</h2>
+            <h2>Programistafrontend.pl</h2>
             <span>
-              <strong>FrontEnd Developer</strong> & <strong>UI Designer</strong>
+              <strong>Web Developer Daniel Noworyta</strong>
             </span>
           </Link>
         </LogoWrapper>
