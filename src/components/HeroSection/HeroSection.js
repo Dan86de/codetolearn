@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
-import heroBgSvg from "../../assets/images/bg/Group 205.svg"
+import heroBgSvg from "../../assets/images/bg/bgHeroDark.svg"
 
 const HeroSectionWrapper = styled.div`
   position: relative;

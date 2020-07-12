@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import MenuDrawerButton from "../Navigation/MenuDrawerButton"
-import logo from "../../assets/images/branding/Group 206.svg"
+import logo from "../../assets/images/branding/logoDark.svg"
 
 const NavigationWrapper = styled.div`
   display: flex;
