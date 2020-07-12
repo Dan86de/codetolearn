@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import MenuDrawerButton from "../Navigation/MenuDrawerButton"
+import logo from "../../assets/images/branding/Group 206.svg"
 
 const NavigationWrapper = styled.div`
   display: flex;
@@ -19,16 +20,21 @@ const LogoWrapper = styled.div`
   flex-grow: 2;
   margin-top: 10px;
   z-index: 999;
+  color: var(--mainColor);
   &.active {
     color: white;
   }
+  display: flex;
+  align-items: center;
   cursor: pointer;
   a {
     font-size: var(--fontH4);
     text-decoration: none;
-    color: inherit;
     font-weight: 700;
-    margin-top: 10px;
+    display: none;
+    @media only screen and (min-width: 768px) {
+      display: block;
+    }
     h2 {
       font-size: 24px;
       margin: 0;
@@ -37,23 +43,51 @@ const LogoWrapper = styled.div`
       margin-top: 10px;
     }
     span {
+<<<<<<< Updated upstream
       font-size: 10px;
       opacity: 0.75;
       text-transform: none;
       strong {
         text-transform: uppercase;
       }
+=======
+      font-size: 12px;
+      color: var(--mainGray);
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.3em;
+      @media only screen and (min-width: 1280px) {
+        color: var(--textOnMain);
+      }
+    }
+    @media only screen and (min-width: 1280px) {
+      color: white;
+>>>>>>> Stashed changes
     }
   }
+`
+
+const LogoPlaceholder = styled.div`
+  width: 50px;
+  height: 50px;
+  background-image: url(${logo});
+  background-repeat: no-repeat;
+  margin-right: 12px;
 `
 
 const MenuButtonWrapper = styled.a`
   display: flex;
   cursor: pointer;
   z-index: 999;
-  color: var(--mainColor);
+  color: var(--mainGray);
+  margin-top: 12px;
   span {
     transition: all 0.15s linear;
+    letter-spacing: 0.3em;
+    display: none;
+    @media only screen and (min-width: 1280px) {
+      display: block;
+    }
   }
 
   &.active {
@@ -79,6 +113,9 @@ const MenuButtonWrapper = styled.a`
   &.active:hover span {
     opacity: 1;
   }
+  @media only screen and (min-width: 1280px) {
+    color: white;
+  }
 `
 
 const Navigation = props => {
@@ -88,6 +125,7 @@ const Navigation = props => {
         <LogoWrapper
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
         >
+          <LogoPlaceholder />
           <Link to="/" exact="true">
             <h2>Daniel Noworyta</h2>
             <span>
