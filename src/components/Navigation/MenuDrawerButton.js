@@ -42,10 +42,13 @@ const ToggleButtonLine = styled.i`
   display: block;
   width: 100%;
   height: 3px;
-  background-color: var(--mainColor);
   z-index: 999;
+  background-color: var(--mainColor);
   &.active {
     background-color: var(--textOnMain);
+  }
+  @media only screen and (min-width: 1280px) {
+    background-color: white;
   }
 `
 

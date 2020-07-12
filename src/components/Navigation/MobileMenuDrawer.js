@@ -81,7 +81,7 @@ const MobileMenuDrawer = props => {
           Blog
         </Link>
         <Link to="/about" onClick={props.linkClick}>
-          About Me
+          O mnie
         </Link>
       </NavigationList>
     </MobileMenuDrawerWrapper>

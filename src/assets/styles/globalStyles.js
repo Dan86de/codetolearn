@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
+
 const GlobalStyle = createGlobalStyle`
   :root {
     --fontH1: 59px;
@@ -36,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     }
     position: ${props => (!props.scroll ? "static" : "fixed")};
     overflow-y: ${props => (!props.scroll ? "auto" : "scroll")};
+   
   }
   *, *:before, *:after {
     box-sizing: inherit;

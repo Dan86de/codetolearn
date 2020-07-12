@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 509" style="enable-background:new 0 0 1920 509;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Path_305);}
+	.st1{fill:#ADB0B6;}
+	.st2{fill:#0B1326;}
+	.st3{filter:url(#Path_305-2);}
+	.st4{fill:none;}
+</style>
+<filter  filterUnits="userSpaceOnUse" height="498.708" id="Path_305-2" width="1950" x="0" y="30">
+	<feOffset  dy="5" input="SourceAlpha"></feOffset>
+	<feGaussianBlur  result="blur-2" stdDeviation="5"></feGaussianBlur>
+	<feFlood  flood-color="#adb0b6" flood-opacity="0.502"></feFlood>
+	<feComposite  in2="blur-2" operator="in"></feComposite>
+	<feComposite  in="SourceGraphic" operator="over"></feComposite>
+</filter>
+<filter  filterUnits="userSpaceOnUse" height="498.708" id="Path_305" width="1950" x="0" y="0">
+	<feOffset  dy="5" input="SourceAlpha"></feOffset>
+	<feGaussianBlur  result="blur" stdDeviation="5"></feGaussianBlur>
+	<feFlood  flood-color="#adb0b6" flood-opacity="0.502"></feFlood>
+	<feComposite  in2="blur" operator="in"></feComposite>
+	<feComposite  in="SourceGraphic" operator="over"></feComposite>
+</filter>
+<g id="Group_205" transform="translate(15 1.766)">
+	<g id="Group_203">
+		<g transform="matrix(1, 0, 0, 1, -15, -1.77)" class="st0">
+			<path id="Path_305-3_1_" class="st1" d="M0,478.7c0,0,448.1-118.5,947.1-118.5S1920,478.7,1920,478.7V10H0V478.7z"/>
+		</g>
+		<path id="Path_304" class="st2" d="M-15,466.9c0,0,448.1-118.5,947.1-118.5S1905,466.9,1905,466.9V-1.8H-15V466.9z"/>
+	</g>
+	<g id="Group_204" transform="translate(0 30)">
+		<g transform="matrix(1, 0, 0, 1, -15, -31.77)" class="st3">
+		</g>
+		<path id="Path_304-2" class="st4" d="M-15,466.9c0,0,448.1-118.5,947.1-118.5S1905,466.9,1905,466.9V-1.8H-15V466.9z"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Group_206" data-name="Group 206" transform="translate(-188.5 -36.5)">
+    <rect id="Rectangle_20" data-name="Rectangle 20" width="45" height="45" rx="5" transform="translate(190 38)" fill="#0b1326" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(107)">
+      <text id="F" transform="translate(107 68)" fill="#fff" font-size="20" font-family="AktivGrotesk-Bold, Aktiv Grotesk" font-weight="700"><tspan x="0" y="0">F</tspan></text>
+      <text id="P" transform="translate(93 68)" fill="#fff" font-size="20" font-family="AktivGrotesk-Bold, Aktiv Grotesk" font-weight="700"><tspan x="0" y="0">P</tspan></text>
+    </g>
+  </g>
+</svg>
