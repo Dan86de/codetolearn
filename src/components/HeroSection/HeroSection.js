@@ -45,31 +45,30 @@ const HeroSectionTextWrapper = styled.div`
       font-size: 72px;
     }
   }
-    p {
-      font-size: 22px;
-      line-height: 1.8rem;
-      color: #555555;
-      margin-top: 1rem;
+  p {
+    font-size: 22px;
+    line-height: 1.8rem;
+    color: #555555;
+    margin-top: 1rem;
 
-      @media only screen and (min-width: 768px) {
-        line-height: 1.8rem;
-        font-size: 20px;
-      }
-
-      @media only screen and (min-width: 1920px) {
-        font-size: 22px;
-      }
-    }
     @media only screen and (min-width: 768px) {
+      line-height: 1.8rem;
+      font-size: 20px;
     }
-    @media only screen and (min-width: 1280px) {
-      width: 60%;
-      transform: translateY(-30%);
-    }
+
     @media only screen and (min-width: 1920px) {
-      width: 670px;
-      transform: translateY(-50%);
+      font-size: 22px;
     }
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 60%;
+    transform: translateY(-30%);
+  }
+  @media only screen and (min-width: 1920px) {
+    width: 670px;
+    transform: translateY(-50%);
   }
 `
 
