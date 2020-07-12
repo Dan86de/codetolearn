@@ -46,32 +46,17 @@ const LogoWrapper = styled.div`
       font-weight: bold;
     }
     span {
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-      font-size: 10px;
-      opacity: 0.75;
-      text-transform: none;
-      strong {
-        text-transform: uppercase;
-      }
-=======
->>>>>>> @{-1}
       font-size: 12px;
       color: var(--mainGray);
       text-transform: uppercase;
       font-weight: bold;
       letter-spacing: 0.3em;
-<<<<<<< HEAD
-=======
       @media only screen and (min-width: 1280px) {
         color: var(--textOnMain);
       }
     }
     @media only screen and (min-width: 1280px) {
       color: white;
->>>>>>> Stashed changes
->>>>>>> @{-1}
     }
   }
 `
