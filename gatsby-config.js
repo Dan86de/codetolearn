@@ -11,10 +11,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-layout`,
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
         typekit: {
-          id: "stj4ygb",
+          id: `stj4ygb`,
         },
       },
     },

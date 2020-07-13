@@ -64,7 +64,7 @@ const HeroSectionTextWrapper = styled.div`
   }
   @media only screen and (min-width: 1280px) {
     width: 60%;
-    transform: translateY(-30%);
+    transform: translateY(-20%);
   }
   @media only screen and (min-width: 1920px) {
     width: 670px;
