@@ -50,7 +50,7 @@ const LogoWrapper = styled.div`
       color: var(--mainGray);
       text-transform: uppercase;
       font-weight: bold;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.4em;
       @media only screen and (min-width: 1280px) {
         color: var(--textOnMain);
       }
@@ -65,22 +65,32 @@ const LogoPlaceholder = styled.div`
   width: 50px;
   height: 50px;
   margin-right: 12px;
-  border: 3px solid white;
+  border: 3px solid var(--mainColor);
+  &.active {
+    border: 3px solid white;
+  }
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   span {
-    color: white;
+    color: var(--mainColor);
+    font-weight: 800;
     text-transform: uppercase;
     font-size: 20px;
     line-height: 20px;
     margin: 0;
     transform: translateX(2px);
     transform: translateY(2px);
+    @media only screen and (min-width: 1280px) {
+      color: white;
+    }
+  }
+  &.active span {
+    color: white;
   }
   @media only screen and (min-width: 1280px) {
-    color: inherited;
+    border: 3px solid white;
   }
 `
 
@@ -134,7 +144,9 @@ const Navigation = props => {
         <LogoWrapper
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
         >
-          <LogoPlaceholder>
+          <LogoPlaceholder
+            className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+          >
             <span>PF</span>
           </LogoPlaceholder>
           <Link to="/" exact="true">
