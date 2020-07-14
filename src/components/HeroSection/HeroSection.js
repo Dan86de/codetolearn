@@ -63,7 +63,6 @@ const HeroSectionTextWrapper = styled.div`
     @media only screen and (min-width: 768px) {
       line-height: 1.8rem;
       font-size: 20px;
-      
     }
 
     @media only screen and (min-width: 1920px) {
