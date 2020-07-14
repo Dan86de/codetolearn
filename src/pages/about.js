@@ -6,7 +6,7 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
 `
 
-const AboutPage = () => (
+const AboutPage = props => (
   <ContentWrapper>
     <h1>O mnie</h1>
     <p>
