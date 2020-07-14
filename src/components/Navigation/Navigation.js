@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import MenuDrawerButton from "../Navigation/MenuDrawerButton"
-import logoDark from "../../assets/images/branding/logoDark.svg"
-import logoBright from "../../assets/images/branding/logoBright.svg"
 
 const NavigationWrapper = styled.div`
   display: flex;
@@ -45,6 +43,7 @@ const LogoWrapper = styled.div`
       margin-top: 12px;
       margin-bottom: 8px;
       font-weight: bold;
+      letter-spacing: 0.05em;
     }
     span {
       font-size: 12px;
@@ -65,11 +64,23 @@ const LogoWrapper = styled.div`
 const LogoPlaceholder = styled.div`
   width: 50px;
   height: 50px;
-  background-image: url(${logoBright});
-  background-repeat: no-repeat;
   margin-right: 12px;
+  border: 3px solid white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0;
+    transform: translateX(2px);
+    transform: translateY(2px);
+  }
   @media only screen and (min-width: 1280px) {
-    background-image: url(${logoDark});
+    color: inherited;
   }
 `
 
@@ -123,7 +134,9 @@ const Navigation = props => {
         <LogoWrapper
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
         >
-          <LogoPlaceholder />
+          <LogoPlaceholder>
+            <span>PF</span>
+          </LogoPlaceholder>
           <Link to="/" exact="true">
             <h2>Programistafrontend.pl</h2>
             <span>
