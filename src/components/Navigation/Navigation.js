@@ -73,6 +73,9 @@ const LogoPlaceholder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  &.active span {
+    color: white;
+  }
   span {
     color: var(--mainColor);
     font-weight: 800;
@@ -86,9 +89,7 @@ const LogoPlaceholder = styled.div`
       color: white;
     }
   }
-  &.active span {
-    color: white;
-  }
+
   @media only screen and (min-width: 1280px) {
     border: 3px solid white;
   }
