@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import MenuDrawerButton from "../Navigation/MenuDrawerButton"
-import logo from "../../assets/images/branding/logoDark.svg"
+import logoDark from "../../assets/images/branding/logoDark.svg"
+import logoBright from "../../assets/images/branding/logoBright.svg"
 
 const NavigationWrapper = styled.div`
   display: flex;
@@ -41,8 +42,8 @@ const LogoWrapper = styled.div`
       margin: 0;
       padding: 0;
       line-height: 10px;
-      margin-top: 10px;
-      margin-bottom: 4px;
+      margin-top: 12px;
+      margin-bottom: 8px;
       font-weight: bold;
     }
     span {
@@ -64,9 +65,12 @@ const LogoWrapper = styled.div`
 const LogoPlaceholder = styled.div`
   width: 50px;
   height: 50px;
-  background-image: url(${logo});
+  background-image: url(${logoBright});
   background-repeat: no-repeat;
   margin-right: 12px;
+  @media only screen and (min-width: 1280px) {
+    background-image: url(${logoDark});
+  }
 `
 
 const MenuButtonWrapper = styled.a`

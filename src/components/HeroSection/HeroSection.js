@@ -27,11 +27,21 @@ const HeroSectionWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  @media only screen and (min-width: 1280px) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    min-height: calc(100vh - 90px);
+    align-items: flex-end;
+  }
 `
 
 const HeroSectionTextWrapper = styled.div`
   width: 100%;
   align-self: flex-end;
+  transform: translateY(-100%);
+  z-index: 99;
   span {
     font-size: var(--fontBody);
     text-transform: uppercase;
@@ -46,40 +56,53 @@ const HeroSectionTextWrapper = styled.div`
     }
   }
   p {
-    font-size: 22px;
-    line-height: 1.8rem;
+    font-size: 14px;
     color: #555555;
     margin-top: 1rem;
 
     @media only screen and (min-width: 768px) {
       line-height: 1.8rem;
       font-size: 20px;
+      
     }
 
     @media only screen and (min-width: 1920px) {
+      line-height: 1.8rem;
       font-size: 22px;
     }
   }
   @media only screen and (min-width: 768px) {
+    transform: translateY(-150%);
+  }
+  @media only screen and (min-width: 1024px) {
+    transform: translateY(-170%);
   }
   @media only screen and (min-width: 1280px) {
     width: 60%;
-    transform: translateY(-20%);
+    transform: translateY(-10%);
   }
   @media only screen and (min-width: 1920px) {
-    width: 670px;
-    transform: translateY(-50%);
+    transform: translateY(-20%);
   }
 `
 
 const HeroImgContainer = styled(Img)`
+  width: 100%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 75%);
+  mask-image: linear-gradient(180deg, white, white, transparent 70%);
+  transform: translateY(-5%);
   @media only screen and (min-width: 768px) {
+    transform: translateY(0%);
   }
   @media only screen and (min-width: 1280px) {
-    width: 450px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    mask-image: none;
+    display: block;
+    width: 400px;
+    position: relative;
   }
   @media only screen and (min-width: 1920px) {
-    width: 670px;
+    width: 600px;
   }
 `
 

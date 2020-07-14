@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components"
 
-
 const GlobalStyle = createGlobalStyle`
   :root {
     --fontH1: 59px;
@@ -80,6 +79,9 @@ const GlobalStyle = createGlobalStyle`
     @media only screen and (min-width: 768px) {
       padding: 0;
       max-width: 708px;
+    }
+    @media only screen and (min-width: 1024px) {
+      max-width: 924px;
     }
     @media only screen and (min-width: 1280px) {
       max-width: 1180px;
