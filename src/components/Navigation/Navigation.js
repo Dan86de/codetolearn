@@ -117,9 +117,10 @@ const MenuButtonWrapper = styled.a`
     display: none;
     @media only screen and (min-width: 1280px) {
       display: block;
-      color: ${props =>
-        props.currentPath != "/" ? "var(--mainColor)" : "white"};
-    }
+      color: ${props => {
+        console.log(props)
+        return props.currentPath === "/" ? "white" : "var(--mainColor)"
+      }}
   }
   &.active {
     color: var(--textOnMain);
