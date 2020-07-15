@@ -49,6 +49,7 @@ const LogoWrapper = styled.div`
       letter-spacing: 0.05em;
       color: var(--mainColor);
       @media only screen and (min-width: 1280px) {
+        color: white;
         color: ${props =>
           props.currentPath === "/" ? "white" : "var(--mainColor)"};
       }
@@ -60,7 +61,6 @@ const LogoWrapper = styled.div`
       font-weight: bold;
       letter-spacing: 0.4em;
       @media only screen and (min-width: 1280px) {
-        color: var(--textOnMain);
         color: ${props =>
           props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainGray)"};
       }
@@ -145,6 +145,7 @@ const MenuButtonWrapper = styled.a`
     opacity: 1;
   }
   @media only screen and (min-width: 1280px) {
+    color: white;
     color: ${props =>
       props.currentPath === "/" ? "white" : "var(--mainColor)"};
   }
