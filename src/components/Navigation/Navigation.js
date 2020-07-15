@@ -49,7 +49,6 @@ const LogoWrapper = styled.div`
       letter-spacing: 0.05em;
       color: var(--mainColor);
       @media only screen and (min-width: 1280px) {
-        color: white;
         color: ${props =>
           props.currentPath === "/" ? "white" : "var(--mainColor)"};
       }
@@ -118,9 +117,10 @@ const MenuButtonWrapper = styled.a`
     display: none;
     @media only screen and (min-width: 1280px) {
       display: block;
+      color: ${props =>
+        props.currentPath != "/" ? "var(--mainColor)" : "white"};
     }
   }
-
   &.active {
     color: var(--textOnMain);
     opacity: 0.5;
@@ -143,11 +143,6 @@ const MenuButtonWrapper = styled.a`
   }
   &.active:hover span {
     opacity: 1;
-  }
-  @media only screen and (min-width: 1280px) {
-    color: white;
-    color: ${props =>
-      props.currentPath === "/" ? "white" : "var(--mainColor)"};
   }
 `
 
