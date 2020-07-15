@@ -48,6 +48,8 @@ const ToggleButtonLine = styled.i`
     background-color: var(--textOnMain);
   }
   @media only screen and (min-width: 1280px) {
+    background-color: ${props =>
+      props.currentPath === "/" ? "white" : "var(--mainColor)"};
   }
 `
 
@@ -56,12 +58,15 @@ const MenuDrawerButton = props => {
     <ToggleButton className={props.onActive ? "active" : ""}>
       <ToggleButtonLine
         className={props.onActive ? "active" : ""}
+        currentPath={props.currentPath}
       ></ToggleButtonLine>
       <ToggleButtonLine
         className={props.onActive ? "active" : ""}
+        currentPath={props.currentPath}
       ></ToggleButtonLine>
       <ToggleButtonLine
         className={props.onActive ? "active" : ""}
+        currentPath={props.currentPath}
       ></ToggleButtonLine>
     </ToggleButton>
   )

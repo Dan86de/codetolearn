@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import MenuDrawerButton from "../Navigation/MenuDrawerButton"
+import useSiteMetadata from "../../hooks/use-site-metadata"
 
 const NavigationWrapper = styled.div`
   display: flex;
@@ -20,9 +21,11 @@ const LogoWrapper = styled.div`
   flex-grow: 2;
   margin-top: 2em;
   z-index: 999;
-  color: var(--mainColor);
-  &.active {
+  &.active a h2 {
     color: white;
+  }
+  &.active a span {
+    color: var(--textOnMain);
   }
   display: flex;
   align-items: center;
@@ -44,6 +47,11 @@ const LogoWrapper = styled.div`
       margin-bottom: 8px;
       font-weight: bold;
       letter-spacing: 0.05em;
+      color: var(--mainColor);
+      @media only screen and (min-width: 1280px) {
+        color: ${props =>
+          props.currentPath === "/" ? "white" : "var(--mainColor)"};
+      }
     }
     span {
       font-size: 12px;
@@ -53,10 +61,9 @@ const LogoWrapper = styled.div`
       letter-spacing: 0.4em;
       @media only screen and (min-width: 1280px) {
         color: var(--textOnMain);
+        color: ${props =>
+          props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainGray)"};
       }
-    }
-    @media only screen and (min-width: 1280px) {
-      color: white;
     }
   }
 `
@@ -86,12 +93,16 @@ const LogoPlaceholder = styled.div`
     transform: translateX(2px);
     transform: translateY(2px);
     @media only screen and (min-width: 1280px) {
-      color: white;
+      color: ${props =>
+        props.currentPath === "/" ? "white" : "var(--mainColor)"};
     }
   }
 
   @media only screen and (min-width: 1280px) {
-    border: 3px solid white;
+    border: ${props =>
+      props.currentPath === "/"
+        ? "3px solid white"
+        : "3px solid var(--mainColor)"};
   }
 `
 
@@ -134,19 +145,23 @@ const MenuButtonWrapper = styled.a`
     opacity: 1;
   }
   @media only screen and (min-width: 1280px) {
-    color: white;
+    color: ${props =>
+      props.currentPath === "/" ? "white" : "var(--mainColor)"};
   }
 `
 
 const Navigation = props => {
+  console.log(props.currentLocation.pathname)
   return (
     <>
       <NavigationWrapper className={"contentWrapper"}>
         <LogoWrapper
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+          currentPath={props.currentLocation.pathname}
         >
           <LogoPlaceholder
             className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+            currentPath={props.currentLocation.pathname}
           >
             <span>PF</span>
           </LogoPlaceholder>
@@ -160,9 +175,13 @@ const Navigation = props => {
         <MenuButtonWrapper
           onClick={props.mobileMenuDrawerClickHandler}
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+          currentPath={props.currentLocation.pathname}
         >
           <span>{props.state.mobileMenuDrawerOpen ? "Close" : "Menu"}</span>
-          <MenuDrawerButton onActive={props.state.mobileMenuDrawerOpen} />
+          <MenuDrawerButton
+            onActive={props.state.mobileMenuDrawerOpen}
+            currentPath={props.currentLocation.pathname}
+          />
         </MenuButtonWrapper>
       </NavigationWrapper>
     </>

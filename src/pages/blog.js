@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import PostPreview from "../components/PostPreview/PostPreview"
+import useSiteMetadata from "../hooks/use-site-metadata"
 
 const RecentPostWrapper = styled.div`
   width: 100%;
@@ -20,7 +21,9 @@ const RecentPostWrapper = styled.div`
   }
 `
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, location }) => {
+  const { siteURL } = useSiteMetadata()
+  const currentUrl = `${siteURL}${location.pathname}`
   return (
     <>
       <h1>Strona ze wszystkimi artykułami</h1>

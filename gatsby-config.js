@@ -2,9 +2,10 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: `ProgramistaFrontEnd`,
-    description: `Strona dla frontendowców`,
-    author: `@danielnoworyta`,
+    title: "Programistafrontend.pl",
+    description: "Web developer Daniel Noworyta",
+    author: "@dan86de",
+    siteURL: "https://codetolearn.pl",
   },
   plugins: [
     `gatsby-plugin-styled-components`,

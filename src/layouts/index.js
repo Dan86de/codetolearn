@@ -38,6 +38,7 @@ class MainLayout extends Component {
         <Navigation
           mobileMenuDrawerClickHandler={this.drawerToggleClickHandler}
           state={this.state}
+          currentLocation={typeof window !== "undefined" ? window.location : ""}
         />
         {this.props.children}
         <Footer />
