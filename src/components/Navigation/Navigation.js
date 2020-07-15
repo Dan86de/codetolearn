@@ -120,7 +120,8 @@ const MenuButtonWrapper = styled.a`
       color: ${props => {
         console.log(props)
         return props.currentPath === "/" ? "white" : "var(--mainColor)"
-      }}
+      }};
+    }
   }
   &.active {
     color: var(--textOnMain);
