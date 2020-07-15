@@ -105,9 +105,7 @@ const HeroImgContainer = styled(Img)`
 `
 
 const HeroSection = () => {
-  const bottomEdge = window.scrollY + window.innerHeight
   const heroImageData = useStaticQuery(query)
-  console.log(bottomEdge)
   return (
     <HeroSectionWrapper>
       <ContentWrapper className={"contentWrapper"}>
