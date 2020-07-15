@@ -117,14 +117,8 @@ const MenuButtonWrapper = styled.a`
     display: none;
     @media only screen and (min-width: 1280px) {
       display: block;
-      color: ${props => {
-        console.log(props)
-        console.log(
-          props.currentPath === "/" ? "white" : "red",
-          props.currentPath === "/"
-        )
-        return props.currentPath === "/" ? "white" : "red"
-      }};
+      color: ${props =>
+        props.currentPath === "/" ? "white" : "var(--mainColor)"};
     }
   }
   &.active {
@@ -153,17 +147,20 @@ const MenuButtonWrapper = styled.a`
 `
 
 const Navigation = props => {
-  console.log(props.currentLocation.pathname)
   return (
     <>
       <NavigationWrapper className={"contentWrapper"}>
         <LogoWrapper
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
-          currentPath={props.currentLocation.pathname}
+          currentPath={
+            typeof window !== "undefined" ? window.location.pathname : ""
+          }
         >
           <LogoPlaceholder
             className={props.state.mobileMenuDrawerOpen ? "active" : ""}
-            currentPath={props.currentLocation.pathname}
+            currentPath={
+              typeof window !== "undefined" ? window.location.pathname : ""
+            }
           >
             <span>PF</span>
           </LogoPlaceholder>
@@ -177,12 +174,16 @@ const Navigation = props => {
         <MenuButtonWrapper
           onClick={props.mobileMenuDrawerClickHandler}
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
-          currentPath={props.currentLocation.pathname}
+          currentPath={
+            typeof window !== "undefined" ? window.location.pathname : ""
+          }
         >
           <span>{props.state.mobileMenuDrawerOpen ? "Close" : "Menu"}</span>
           <MenuDrawerButton
             onActive={props.state.mobileMenuDrawerOpen}
-            currentPath={props.currentLocation.pathname}
+            currentPath={
+              typeof window !== "undefined" ? window.location.pathname : ""
+            }
           />
         </MenuButtonWrapper>
       </NavigationWrapper>
