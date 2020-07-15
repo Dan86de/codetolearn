@@ -48,11 +48,11 @@ const ToggleButtonLine = styled.i`
     background-color: var(--textOnMain);
   }
   @media only screen and (min-width: 1280px) {
-    background-color: white;
   }
 `
 
 const MenuDrawerButton = props => {
+  const currentUrl = window.location.pathname
   return (
     <ToggleButton className={props.onActive ? "active" : ""}>
       <ToggleButtonLine

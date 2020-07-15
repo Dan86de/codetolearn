@@ -40,7 +40,7 @@ const ContentWrapper = styled.div`
 const HeroSectionTextWrapper = styled.div`
   width: 100%;
   align-self: flex-end;
-  transform: translateY(-100%);
+  transform: translateY(-75%);
   z-index: 99;
   span {
     font-size: var(--fontBody);
@@ -59,14 +59,13 @@ const HeroSectionTextWrapper = styled.div`
     font-size: 14px;
     color: #555555;
     margin-top: 1rem;
-
+    line-height: 1.3rem;
     @media only screen and (min-width: 768px) {
       line-height: 1.8rem;
       font-size: 20px;
     }
 
     @media only screen and (min-width: 1920px) {
-      line-height: 1.8rem;
       font-size: 22px;
     }
   }
@@ -87,8 +86,8 @@ const HeroSectionTextWrapper = styled.div`
 
 const HeroImgContainer = styled(Img)`
   width: 100%;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 75%);
-  mask-image: linear-gradient(180deg, white, white, transparent 70%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 85%);
+  mask-image: linear-gradient(180deg, white, white, transparent 80%);
   transform: translateY(-5%);
   @media only screen and (min-width: 768px) {
     transform: translateY(0%);
@@ -106,7 +105,9 @@ const HeroImgContainer = styled(Img)`
 `
 
 const HeroSection = () => {
+  const bottomEdge = window.scrollY + window.innerHeight
   const heroImageData = useStaticQuery(query)
+  console.log(bottomEdge)
   return (
     <HeroSectionWrapper>
       <ContentWrapper className={"contentWrapper"}>
