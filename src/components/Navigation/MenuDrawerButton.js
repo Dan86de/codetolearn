@@ -52,7 +52,6 @@ const ToggleButtonLine = styled.i`
 `
 
 const MenuDrawerButton = props => {
-  const currentUrl = window.location.pathname
   return (
     <ToggleButton className={props.onActive ? "active" : ""}>
       <ToggleButtonLine
