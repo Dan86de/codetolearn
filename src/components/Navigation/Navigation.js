@@ -153,13 +153,13 @@ const Navigation = props => {
         <LogoWrapper
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
           currentPath={
-            typeof window !== "undefined" ? window.location.pathname : ""
+            typeof window !== "undefined" ? window.location.pathname : "/"
           }
         >
           <LogoPlaceholder
             className={props.state.mobileMenuDrawerOpen ? "active" : ""}
             currentPath={
-              typeof window !== "undefined" ? window.location.pathname : ""
+              typeof window !== "undefined" ? window.location.pathname : "/"
             }
           >
             <span>PF</span>
@@ -173,16 +173,16 @@ const Navigation = props => {
         </LogoWrapper>
         <MenuButtonWrapper
           onClick={props.mobileMenuDrawerClickHandler}
-          className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+          className={props.state.mobileMenuDrawerOpen ? "active" : "/"}
           currentPath={
-            typeof window !== "undefined" ? window.location.pathname : ""
+            typeof window !== "undefined" ? window.location.pathname : "/"
           }
         >
           <span>{props.state.mobileMenuDrawerOpen ? "Close" : "Menu"}</span>
           <MenuDrawerButton
             onActive={props.state.mobileMenuDrawerOpen}
             currentPath={
-              typeof window !== "undefined" ? window.location.pathname : ""
+              typeof window !== "undefined" ? window.location.pathname : "/"
             }
           />
         </MenuButtonWrapper>
