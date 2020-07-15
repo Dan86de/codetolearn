@@ -119,6 +119,10 @@ const MenuButtonWrapper = styled.a`
       display: block;
       color: ${props => {
         console.log(props)
+        console.log(
+          props.currentPath === "/" ? "white" : "red",
+          props.currentPath === "/"
+        )
         return props.currentPath === "/" ? "white" : "red"
       }};
     }
