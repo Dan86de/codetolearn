@@ -16,7 +16,7 @@ const HeroSectionWrapper = styled.div`
     background-image: url(${heroBgSvg});
     background-repeat: no-repeat;
     position: absolute;
-    top: -92px;
+    top: -100px;
     left: 0;
     @media only screen and (min-width: 1280px) {
       display: block;
@@ -73,14 +73,18 @@ const HeroSectionTextWrapper = styled.div`
     transform: translateY(-150%);
   }
   @media only screen and (min-width: 1024px) {
-    transform: translateY(-170%);
+    transform: translateY(-150%);
+    width: 80%;
+    align-self: flex-start;
   }
   @media only screen and (min-width: 1280px) {
     width: 60%;
     transform: translateY(-10%);
+    align-self: flex-end;
   }
   @media only screen and (min-width: 1920px) {
-    transform: translateY(-20%);
+    transform: translateY(-25%);
+    width: 50%;
   }
 `
 

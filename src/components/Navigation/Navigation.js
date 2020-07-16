@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import MenuDrawerButton from "../Navigation/MenuDrawerButton"
-import useSiteMetadata from "../../hooks/use-site-metadata"
 
 const NavigationWrapper = styled.div`
   display: flex;
@@ -68,35 +67,40 @@ const LogoWrapper = styled.div`
 `
 
 const LogoPlaceholder = styled.div`
-  width: 50px;
-  height: 50px;
-  margin-right: 12px;
-  border: 3px solid var(--mainColor);
-  &.active {
-    border: 3px solid white;
-  }
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  &.active span {
-    color: white;
+  margin-right: 12px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--mainColor);
+  border-radius: 5px;
+  &.active {
+    border: 3px solid white;
   }
-  span {
+  a {
+    font-family: aktiv-grotesk, sans-serif;
     color: var(--mainColor);
-    font-weight: 800;
     text-transform: uppercase;
-    font-size: 20px;
-    line-height: 20px;
-    margin: 0;
-    transform: translateX(2px);
+    transform: translateX(6px);
     transform: translateY(2px);
-    @media only screen and (min-width: 1280px) {
-      color: ${props =>
-        props.currentPath === "/" ? "white" : "var(--mainColor)"};
+    line-height: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    &.active span {
+      color: white;
+    }
+    span {
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      margin: 0;
+      @media only screen and (min-width: 1280px) {
+        color: ${props =>
+          props.currentPath === "/" ? "white" : "var(--mainColor)"};
+      }
     }
   }
-
   @media only screen and (min-width: 1280px) {
     border: ${props =>
       props.currentPath === "/"
@@ -162,8 +166,11 @@ const Navigation = props => {
               typeof window !== "undefined" ? window.location.pathname : "/"
             }
           >
-            <span>PF</span>
+            <Link to="/" exact="true">
+              <span>PF</span>
+            </Link>
           </LogoPlaceholder>
+
           <Link to="/" exact="true">
             <h2>Programistafrontend.pl</h2>
             <span>

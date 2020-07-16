@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: aktiv-grotesk, sans-serif;
     font-weight: 500;
     font-style: normal;
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
     @media only screen and (min-width: 768px) {
       font-size: 16px;
     }
