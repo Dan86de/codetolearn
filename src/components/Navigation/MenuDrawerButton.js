@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 const ToggleButton = styled.b`
-  margin-top: 10px;
   height: 22px;
   width: 22px;
   cursor: pointer;
@@ -44,12 +43,13 @@ const ToggleButtonLine = styled.i`
   height: 3px;
   z-index: 999;
   background-color: var(--mainColor);
+  transition: all 0.15s linear;
   &.active {
     background-color: var(--textOnMain);
   }
   @media only screen and (min-width: 1280px) {
     background-color: ${props =>
-      props.currentPath === "/" ? "white" : "var(--mainColor)"};
+      props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainColor)"};
   }
 `
 

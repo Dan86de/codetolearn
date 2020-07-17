@@ -7,146 +7,139 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  span {
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
 `
 
-const LogoWrapper = styled.div`
-  flex-grow: 2;
-  margin-top: 2em;
+const BrandWrapper = styled.div`
   z-index: 999;
-  &.active a h2 {
-    color: white;
-  }
-  &.active a span {
-    color: var(--textOnMain);
-  }
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+  margin-top: 20px;
   a {
-    font-size: var(--fontH4);
     text-decoration: none;
-    font-weight: 700;
-    display: none;
-    @media only screen and (min-width: 768px) {
-      display: block;
-    }
-    h2 {
-      font-size: 29px;
-      margin: 0;
-      padding: 0;
-      line-height: 10px;
-      margin-top: 12px;
-      margin-bottom: 8px;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      color: var(--mainColor);
-      @media only screen and (min-width: 1280px) {
-        color: ${props =>
-          props.currentPath === "/" ? "white" : "var(--mainColor)"};
-      }
-    }
-    span {
-      font-size: 12px;
-      color: var(--mainGray);
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 0.4em;
-      @media only screen and (min-width: 1280px) {
-        color: ${props =>
-          props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainGray)"};
-      }
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--mainColor);
+  }
+  &.active a {
+    color: var(--textOnMain);
   }
 `
 
 const LogoPlaceholder = styled.div`
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 12px;
-  width: 50px;
-  height: 50px;
+  width: 48px;
   border: 3px solid var(--mainColor);
   border-radius: 5px;
   &.active {
-    border: 3px solid white;
-  }
-  a {
-    font-family: aktiv-grotesk, sans-serif;
-    color: var(--mainColor);
-    text-transform: uppercase;
-    transform: translateX(6px);
-    transform: translateY(2px);
-    line-height: 20px;
-    display: inline-block;
-    margin: 0 auto;
-    text-align: center;
-    &.active span {
-      color: white;
-    }
+    border: 3px solid var(--textOnMain);
     span {
-      font-size: 20px;
-      letter-spacing: 0.1em;
-      margin: 0;
-      @media only screen and (min-width: 1280px) {
-        color: ${props =>
-          props.currentPath === "/" ? "white" : "var(--mainColor)"};
-      }
+      color: var(--textOnMain);
     }
   }
+  span {
+    font-size: 20px;
+    line-height: 39px;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    padding-left: 2px;
+    transform: translateY(1px);
+    @media only screen and (min-width: 1280px) {
+      color: ${props =>
+        props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainColor)"};
+    }
+  }
+
   @media only screen and (min-width: 1280px) {
     border: ${props =>
       props.currentPath === "/"
-        ? "3px solid white"
+        ? "3px solid var(--textOnMain)"
         : "3px solid var(--mainColor)"};
+  }
+`
+
+const BrandTextWrapper = styled.div`
+  z-index: 999;
+  flex-direction: column;
+  display: none;
+  transform: translateY(2px);
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    font-size: var(--fontH3);
+  }
+  span {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--mainGray);
+    letter-spacing: 0.3em;
+  }
+  &.active {
+    h2 {
+      color: var(--textOnMain);
+    }
+    span {
+      color: var(--secondaryGray);
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    h2 {
+      color: ${props =>
+        props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainColor)"};
+    }
+    span {
+      color: ${props =>
+        props.currentPath === "/" ? "var(--secondaryGray)" : "var(--mainGray)"};
+    }
   }
 `
 
 const MenuButtonWrapper = styled.a`
   display: flex;
   cursor: pointer;
-  z-index: 999;
-  color: var(--mainGray);
-  margin-top: 12px;
-  span {
-    transition: all 0.15s linear;
-    letter-spacing: 0.3em;
-    display: none;
-    @media only screen and (min-width: 1280px) {
-      display: block;
-      color: ${props =>
-        props.currentPath === "/" ? "white" : "var(--mainColor)"};
-    }
-  }
+  align-items: center;
+  margin-top: 16px;
   &.active {
-    color: var(--textOnMain);
-    opacity: 0.5;
-  }
-  &:hover span {
-    opacity: 0.5;
-  }
-  &:hover b {
-    opacity: 0.5;
-    &:focus {
-      outline: none;
+    span {
+      color: var(--textOnMain);
     }
   }
   &.active:hover {
-    color: white;
-    opacity: 1;
+    span {
+      color: var(--mainGray);
+    }
+    i {
+      background-color: var(--mainGray);
+    }
   }
-  &.active:hover b {
-    opacity: 1;
+  span {
+    color: var(--mainColor);
+    transition: all 0.15s linear;
+    letter-spacing: 0.3em;
+    display: none;
+    z-index: 999;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 2px;
+    margin-right: 0.5em;
   }
-  &.active:hover span {
-    opacity: 1;
+  @media only screen and (min-width: 1280px) {
+    span {
+      display: block;
+      color: ${props =>
+        props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainColor)"};
+    }
   }
 `
 
@@ -154,30 +147,32 @@ const Navigation = props => {
   return (
     <>
       <NavigationWrapper className={"contentWrapper"}>
-        <LogoWrapper
+        <BrandWrapper
           className={props.state.mobileMenuDrawerOpen ? "active" : ""}
           currentPath={
             typeof window !== "undefined" ? window.location.pathname : "/"
           }
         >
-          <LogoPlaceholder
-            className={props.state.mobileMenuDrawerOpen ? "active" : ""}
-            currentPath={
-              typeof window !== "undefined" ? window.location.pathname : "/"
-            }
-          >
-            <Link to="/" exact="true">
-              <span>PF</span>
-            </Link>
-          </LogoPlaceholder>
-
           <Link to="/" exact="true">
-            <h2>Programistafrontend.pl</h2>
-            <span>
-              <strong>Web Developer Daniel Noworyta</strong>
-            </span>
+            <LogoPlaceholder
+              className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+              currentPath={
+                typeof window !== "undefined" ? window.location.pathname : "/"
+              }
+            >
+              <span>PF</span>
+            </LogoPlaceholder>
+            <BrandTextWrapper
+              className={props.state.mobileMenuDrawerOpen ? "active" : ""}
+              currentPath={
+                typeof window !== "undefined" ? window.location.pathname : "/"
+              }
+            >
+              <h2>Programistafrontend.pl</h2>
+              <span>Web Developer Daniel Noworyta</span>
+            </BrandTextWrapper>
           </Link>
-        </LogoWrapper>
+        </BrandWrapper>
         <MenuButtonWrapper
           onClick={props.mobileMenuDrawerClickHandler}
           className={props.state.mobileMenuDrawerOpen ? "active" : "/"}
