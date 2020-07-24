@@ -8,6 +8,13 @@ const SignUpWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 25px;
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 50px;
+  }
+  @media only screen and (min-width: 1024px) {
+    margin-bottom: 75px;
+  }
 `
 
 const SignUpForm = styled.form`
