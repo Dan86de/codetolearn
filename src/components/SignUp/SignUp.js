@@ -3,29 +3,29 @@ import styled from "styled-components"
 
 const SignUpWrapper = styled.div`
   width: 100%;
-  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 25px;
-  @media only screen and (min-width: 768px) {
-    margin-bottom: 50px;
-  }
-  @media only screen and (min-width: 1024px) {
-    margin-bottom: 75px;
+  h2 {
+    line-height: 2.5rem;
   }
 `
 
 const SignUpForm = styled.form`
   border: 2px solid black;
-  padding: 1rem 5rem;
   border-top: 13px solid black;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 1em;
+  margin-bottom: 4em;
 `
 
 const FormHeader = styled.div`
   color: var(--mainColor);
   text-align: center;
+  line-height: 2.5rem;
+  margin: 0;
 `
 
 const FormSubheader = styled.div`
@@ -33,23 +33,26 @@ const FormSubheader = styled.div`
   font-size: var(--fontH5);
   text-align: center;
   margin: 0 auto;
+  line-height: 1rem;
 `
 
 const FormInputsWrapper = styled.div`
-  width: 100%;
-  max-width: 1280px;
+  padding-top: 16px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+  @media only screen and (min-width: 1280px) {
+    flex-direction: row;
+  }
 `
 
 const SingleInputWrapper = styled.div`
-  margin: 0 1rem;
+  margin: 0rem 1rem 0.5rem 1rem;
 `
 
 const InputLabel = styled.label`
   font-weight: 600;
-  margin-right: 1rem;
 `
 
 const FormInput = styled.input`
@@ -58,7 +61,7 @@ const FormInput = styled.input`
   font-weight: 400;
   font-size: var(--fontBody);
   font-family: "Varela Round";
-  margin-top: 0.5em;
+  margin-top: 0.25em;
   padding: 0.5em;
   width: 100%;
   &:focus {
@@ -67,12 +70,14 @@ const FormInput = styled.input`
 `
 
 const FormSbmtBtn = styled.button`
+  width: 100%;
   margin: 0 auto;
-  margin-top: 2rem;
-  display: block;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   background-color: var(--mainColor);
-  padding: 0.8rem 9rem;
   border: 2px solid black;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -83,13 +88,18 @@ const FormSbmtBtn = styled.button`
   span {
     font-family: "Montserrat";
     font-weight: 700;
-    font-size: var(--fontH2);
+    font-size: var(--fontH3);
     letter-spacing: 0.2rem;
+    line-height: 3rem;
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 60%;
   }
 `
 
 const SignUpGuaranteeWrapper = styled.div`
   margin: 1rem auto;
+  padding: 0.25rem 1rem;
   color: inherit;
   font-size: var(--fontBody);
   font-weight: 400;
@@ -99,8 +109,7 @@ const SignUpGuaranteeWrapper = styled.div`
 class Signup extends React.Component {
   render() {
     return (
-      <SignUpWrapper>
-        <h2>Zostańmy w kontakcie!</h2>
+      <SignUpWrapper className={"contentWrapper"}>
         <SignUpForm
           action="https://app.convertkit.com/forms/1343076/subscriptions"
           method="post"
@@ -113,7 +122,7 @@ class Signup extends React.Component {
           <div style={{ opacity: 0.2 }}></div>
           <div data-style="minimal">
             <FormHeader data-element="header">
-              <h2>Zapisz się na newsletter CodeToLearn!</h2>
+              <h2>Zapisz się na newsletter!</h2>
             </FormHeader>
 
             <FormSubheader data-element="subheader">
