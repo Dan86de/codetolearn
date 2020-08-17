@@ -96,7 +96,7 @@ const Footer = () => {
             </BrandTextWrapper>
           </Link>
         </BrandWrapper>
-        <p>Prawa autorskie @ codetolearn.pl 2020</p>
+        <p>Prawa autorskie @ programistafrontend.pl 2020</p>
       </FooterContentWrapper>
     </FooterWrapper>
   )

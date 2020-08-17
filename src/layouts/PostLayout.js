@@ -7,6 +7,7 @@ const ArticleHeroWrapper = styled.div`
   width: 100%;
   height: 400px;
   display: flex;
+  padding-top: 1rem;
 `
 
 const HeroTextWrapper = styled.div`
