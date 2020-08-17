@@ -23,7 +23,6 @@ const RecentPostWrapper = styled.div`
 const BlogPage = ({ data, location }) => {
   return (
     <>
-      <h1>Strona ze wszystkimi artykułami</h1>
       <RecentPostWrapper>
         {data.allDatoCmsArticle.nodes.map(item => (
           <PostPreview
