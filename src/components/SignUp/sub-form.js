@@ -136,7 +136,7 @@ const SubscriptionForm = () => {
         <p>
           Bądź na bieżąco z nowościami na <strong>kanale YouTube</strong> i
           stronie
-          <strong>Programistafrontend.pl</strong>. Dołącz do społeczności
+          <strong> Programistafrontend.pl</strong>. Dołącz do społeczności
           zapalonych front end web developerów.
         </p>
       </HeroTextContainer>
