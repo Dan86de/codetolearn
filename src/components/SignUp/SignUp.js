@@ -116,7 +116,7 @@ class Signup extends React.Component {
           data-sv-form="1343076"
           data-uid="b63667beec"
           data-version="5"
-          data-options="{settings:{after_subscribe:{action:message,success_message:Sukces! Teraz sprawdź swój email i potwierdź subskrybcję.,redirect_url:https://programistafrontend.pl/confirm},analytics:{google:null,facebook:null,segment:null,pinterest:null},modal:{trigger:timer,scroll_percentage:null,timer:5,devices:all,show_once_every:15},powered_by:{show:true,url:https://programistafrontend.pl;utm_content=form},recaptcha:{enabled:false},return_visitor:{action:show,custom_content:},slide_in:{display_in:bottom_right,trigger:timer,scroll_percentage:null,timer:5,devices:all,show_once_every:15},sticky_bar:{display_in:top,trigger:timer,scroll_percentage:null,timer:5,devices:all,show_once_every:15}},version:5}"
+          data-options="{settings:{after_subscribe:{action:redirect,success_message:Sukces! Teraz sprawdź swój email i potwierdź subskrybcję.,redirect_url:https://programistafrontend.pl/confirm},analytics:{google:null,facebook:null,segment:null,pinterest:null},modal:{trigger:timer,scroll_percentage:null,timer:5,devices:all,show_once_every:15},powered_by:{show:true,url:https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form},recaptcha:{enabled:false},return_visitor:{action:hide,custom_content:},slide_in:{display_in:bottom_right,trigger:timer,scroll_percentage:null,timer:5,devices:all,show_once_every:15},sticky_bar:{display_in:top,trigger:timer,scroll_percentage:null,timer:5,devices:all,show_once_every:15}},version:5}"
           min-width="400 500 600 700 800"
         >
           <div style={{ opacity: 0.2 }}></div>

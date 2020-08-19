@@ -97,10 +97,18 @@ const BrandTextWrapper = styled.div`
     h2 {
       color: ${props =>
         props.currentPath === "/" ? "var(--textOnMain)" : "var(--mainColor)"};
+      color: ${props =>
+        props.currentPath === "/thanks" || props.currentPath === "/confirm"
+          ? "var(--mainColor)"
+          : "var(--textOnMain)"};
     }
     span {
       color: ${props =>
         props.currentPath === "/" ? "var(--secondaryGray)" : "var(--mainGray)"};
+      color: ${props =>
+        props.currentPath === "/thanks" || props.currentPath === "/confirm"
+          ? "var(--mainGray)"
+          : "var(--secondaryGray)"};
     }
   }
 `
