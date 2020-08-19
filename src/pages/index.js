@@ -1,13 +1,13 @@
 import React from "react"
 
 import HeroSection from "../components/HeroSection/HeroSection"
-import SignUp from "../components/SignUp/SignUp"
+import SignUpForm from "../components/SignUp/sub-form"
 
 const IndexPage = () => {
   return (
     <>
       <HeroSection></HeroSection>
-      <SignUp></SignUp>
+      <SignUpForm />
     </>
   )
 }
