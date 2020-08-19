@@ -1,5 +1,90 @@
 //In src/components/sub-form.component.js
 import React, { useState } from "react"
+import styled from "styled-components"
+
+const ContentWrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+`
+// FORM STYLES
+
+const HeroTextContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    line-height: 2.2rem;
+    text-align: center;
+    strong {
+      background-color: var(--textOnMain);
+      margin-top: 0.2rem;
+      padding: 0.2rem;
+      display: block;
+    }
+  }
+  p {
+    text-align: center;
+    padding: 1rem;
+  }
+`
+
+const StatusMsg = styled.div`
+  width: 100%;
+  display: flex;
+`
+// INPUT STYLING
+
+const InputWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @media only screen and (min-width: 1280px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  input {
+    width: 90%;
+    margin-bottom: 0.2rem;
+    border: 1px solid var(--mainColor);
+    color: var(--mainColor);
+    padding: 0.6rem 0.8rem 0.2rem 0.4rem;
+    @media only screen and (min-width: 1280px) {
+      width: 45%;
+    }
+  }
+`
+
+const SbmtButton = styled.button`
+  display: block;
+  width: 90%;
+  margin: 1rem auto 0rem auto;
+  padding: 1rem 2rem;
+  background-color: var(--mainColor);
+  color: var(--textOnMain);
+  font-size: var(--fontH3);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: var(--textOnMain);
+    color: var(--mainColor);
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 100%;
+  }
+`
+
+const BtmMsgWrapper = styled.div`
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+`
 
 const SubscriptionForm = () => {
   const [status, setStatus] = useState(null)
@@ -42,54 +127,57 @@ const SubscriptionForm = () => {
   }
 
   return (
-    <div className="sub">
-      <h2>Dołącz do mojego newslettera!</h2>
-      <p>
-        Jeżeli myślisz, że treści umieszczane tutaj są dla Ciebie interesujące
-        zapisz się na newsletter by otrzymywać informacje od razu na Twoją
-        skrzynkę pocztową.
-      </p>
+    <ContentWrapper>
+      <HeroTextContainer>
+        <h2>
+          Dołącz do mojego
+          <strong>NEWSLETTERA!</strong>
+        </h2>
+        <p>
+          Bądź na bieżąco z nowościami na <strong>kanale YouTube</strong> i
+          stronie
+          <strong>Programistafrontend.pl</strong>. Dołącz do społeczności
+          zapalonych front end web developerów.
+        </p>
+      </HeroTextContainer>
+      <StatusMsg>
+        {status === "SUCCESS" && <p>Proszę potwierdź swoją subskrybcję!</p>}
+        {status === "ERROR" && (
+          <p>Oops, Coś poszło nie tak! spróbuj raz jeszcze.</p>
+        )}
+      </StatusMsg>
 
-      {status === "SUCCESS" && <p>Proszę potwierdź swoją subskrybcję!</p>}
-      {status === "ERROR" && (
-        <p>Oops, Coś poszło nie tak! spróbuj raz jeszcze.</p>
-      )}
+      <form action={FORM_URL} method="post" onSubmit={handleSubmit}>
+        <InputWrapper>
+          <input
+            type="text"
+            aria-label="Twoje imię"
+            //The name attribute should be the same as on you selected form.
+            name="fields[first_name]"
+            placeholder="Twoje imię"
+            onChange={handleNameChange}
+            value={name}
+            required
+          />
 
-      <form
-        className="sub__form"
-        action={FORM_URL}
-        method="post"
-        onSubmit={handleSubmit}
-      >
-        <input
-          type="text"
-          aria-label="Twoje imię"
-          //The name attribute should be the same as on you selected form.
-          name="fields[first_name]"
-          placeholder="Twoje imię"
-          onChange={handleNameChange}
-          value={name}
-          required
-        />
+          <input
+            type="email"
+            aria-label="Twój email"
+            //The name attribute should be the same as on you selected form.
+            name="email_address"
+            placeholder="Twój adres email"
+            onChange={handleEmailChange}
+            value={email}
+            required
+          />
+        </InputWrapper>
 
-        <input
-          type="email"
-          aria-label="Twój email"
-          //The name attribute should be the same as on you selected form.
-          name="email_address"
-          placeholder="Twój adres email"
-          onChange={handleEmailChange}
-          value={email}
-          required
-        />
-
-        <button type="submit">Zapisz mnie!</button>
+        <SbmtButton type="submit">Zapisz mnie!</SbmtButton>
       </form>
-
-      <p className="sub__tag">
-        Nie wysyłam spamu i możesz wypisać się w każdym momencie
-      </p>
-    </div>
+      <BtmMsgWrapper>
+        <p>Nie wysyłam spamu i możesz wypisać się w każdym momencie</p>
+      </BtmMsgWrapper>
+    </ContentWrapper>
   )
 }
 
