@@ -14,14 +14,16 @@ const HeroTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   h2 {
     line-height: 2.2rem;
     text-align: center;
+
     strong {
-      background-color: var(--textOnMain);
-      margin-top: 0.2rem;
-      padding: 0.2rem;
       display: block;
+      position: relative;
+      padding-top: 0.5rem;
+      text-decoration: underline;
     }
   }
   p {
@@ -31,8 +33,11 @@ const HeroTextContainer = styled.div`
 `
 
 const StatusMsg = styled.div`
-  width: 100%;
   display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: var(--fontH3);
 `
 // INPUT STYLING
 
