@@ -95,7 +95,8 @@ const SubscriptionForm = () => {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
 
-  const FORM_URL = process.env.FORM_URL
+  const newLocal = process.env.FORM_URL
+  const FORM_URL = newLocal
 
   const handleSubmit = async e => {
     e.preventDefault()
