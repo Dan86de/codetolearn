@@ -95,7 +95,7 @@ const SubscriptionForm = () => {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
 
-  const newLocal = process.env.FORM_URL
+  const newLocal = process.env.GATSBY_FORM_URL
   const FORM_URL = newLocal
 
   const handleSubmit = async e => {
