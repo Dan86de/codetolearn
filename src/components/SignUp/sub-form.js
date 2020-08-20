@@ -1,4 +1,3 @@
-//In src/components/sub-form.component.js
 import React, { useState } from "react"
 import styled from "styled-components"
 
@@ -96,7 +95,7 @@ const SubscriptionForm = () => {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
 
-  const FORM_URL = `https://app.convertkit.com/forms/1343076/subscriptions`
+  const FORM_URL = process.env.FORM_URL
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -124,6 +123,7 @@ const SubscriptionForm = () => {
   const handleEmailChange = event => {
     const { value } = event.target
     setEmail(value)
+    console.log(FORM_URL)
   }
 
   const handleNameChange = event => {
