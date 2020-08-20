@@ -123,7 +123,6 @@ const SubscriptionForm = () => {
   const handleEmailChange = event => {
     const { value } = event.target
     setEmail(value)
-    console.log(FORM_URL)
   }
 
   const handleNameChange = event => {
