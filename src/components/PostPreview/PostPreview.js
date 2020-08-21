@@ -1,22 +1,37 @@
-import React from "react"
-import styled from "styled-components"
+import React, { useState } from "react"
+import styled, { css } from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import slugify from "slugify"
 
 const PreviewWrapper = styled(Link)`
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   color: inherit;
   margin: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
+  overflow: hidden;
   box-shadow: 0 0.1px 0.3px -2px rgba(0, 0, 0, 0.02),
     0 0.3px 0.7px -2px rgba(0, 0, 0, 0.028),
     0 0.6px 1.3px -2px rgba(0, 0, 0, 0.035),
     0 1.1px 2.2px -2px rgba(0, 0, 0, 0.042),
     0 2.1px 4.2px -2px rgba(0, 0, 0, 0.05), 0 5px 10px -2px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--mainColor);
+    h4 {
+      color: var(--secondaryGray);
+    }
+    p {
+      color: var(--secondaryGray);
+    }
+    h3 {
+      color: var(--textOnMain);
+    }
+  }
 `
 
 const PreviewImage = styled(Img)`
@@ -24,6 +39,31 @@ const PreviewImage = styled(Img)`
   height: 200px;
   object-fit: cover;
   position: relative;
+  transition: all 0.3s linear;
+  filter: contrast(100%);
+  position: relative;
+  ${props =>
+    props.isHover &&
+    css`
+      filter: contrast(150%);
+      transform: scale(1.01);
+    `};
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainColor);
+    opacity: 0;
+    transition: all 0.2s linear;
+    ${props =>
+      props.isHover &&
+      css`
+        opacity: 0.5;
+      `};
+  }
 `
 
 const PrewievTextWrapper = styled.div`
@@ -68,7 +108,17 @@ const DateAndTagContainer = styled.div`
   }
 `
 
+const BottomBar = styled.div`
+  width: 100%;
+  height: 2rem;
+  background-color: var(--mainColor);
+  position: absolute;
+  left: 0;
+  top: calc(100% - 2rem);
+`
+
 const PostPreview = props => {
+  const [isHover, setIsHover] = useState(false)
   let postDate = new Date(props.date)
   const options = {
     year: "numeric",
@@ -77,16 +127,26 @@ const PostPreview = props => {
   }
   let slugifiedTitle = slugify(props.title, { lower: true })
   return (
-    <PreviewWrapper to={`/blog/${slugifiedTitle}`} key={props.id}>
-      <PreviewImage fluid={props.featuredImage}></PreviewImage>
+    <PreviewWrapper
+      to={`/blog/${slugifiedTitle}`}
+      key={props.id}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+    >
+      <PreviewImage
+        fluid={props.featuredImage}
+        isHover={isHover}
+      ></PreviewImage>
       <PrewievTextWrapper>
         <DateAndTagContainer>
           <h4>{props.tag} </h4>
           <p> {postDate.toLocaleDateString("pl-PL", options)}</p>
         </DateAndTagContainer>
+
         <h3>{props.title}</h3>
         <p>{props.excerpt}</p>
       </PrewievTextWrapper>
+      <BottomBar></BottomBar>
     </PreviewWrapper>
   )
 }
