@@ -58,6 +58,7 @@ export const query = graphql`
       }
       title
       author
+      tag
       articleContent {
         ... on DatoCmsParagraph {
           paragraphContent
@@ -65,6 +66,10 @@ export const query = graphql`
         }
         ... on DatoCmsHeading {
           headingContent
+          id
+        }
+        ... on DatoCmsQuote {
+          quotetext
           id
         }
         ... on DatoCmsArticleImage {
@@ -108,9 +113,11 @@ const PostLayout = ({ data }) => {
 
             switch (itemKey) {
               case "headingContent":
-                return <h2 key={item.id}>{item[itemKey]}</h2>
+                return <h3 key={item.id}>{item[itemKey]}</h3>
               case "paragraphContent":
                 return <p key={item.id}>{item[itemKey]}</p>
+              case "quotetext":
+                return <p key={item.id}>`"{item[itemKey]}"`</p>
               case "articleImage":
                 return <Img key={item.id} fluid={item[itemKey].fluid}></Img>
               default:
