@@ -11,11 +11,17 @@ const PreviewWrapper = styled(Link)`
   text-decoration: none;
   color: inherit;
   margin: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 0.1px 0.3px -2px rgba(0, 0, 0, 0.02),
+    0 0.3px 0.7px -2px rgba(0, 0, 0, 0.028),
+    0 0.6px 1.3px -2px rgba(0, 0, 0, 0.035),
+    0 1.1px 2.2px -2px rgba(0, 0, 0, 0.042),
+    0 2.1px 4.2px -2px rgba(0, 0, 0, 0.05), 0 5px 10px -2px rgba(0, 0, 0, 0.07);
 `
 
 const PreviewImage = styled(Img)`
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
   position: relative;
 `
@@ -26,29 +32,45 @@ const PrewievTextWrapper = styled.div`
   justify-content: flex-start;
   padding: 0 1rem;
   h3 {
-    margin: 1rem 0rem 0rem 0rem;
-    line-height: 1.75rem;
-  }
-  h4 {
-    color: rgba(0, 0, 0, 0.5);
-    margin: 0 0 1rem 0;
-    font-size: 1em;
-    font-weight: 500;
+    margin: 0;
+    line-height: 1.2em;
   }
   p {
-    line-height: 1.2;
+    margin-top: 1em;
+    line-height: 1.5em;
   }
 `
 
-const DateContainer = styled.div`
+const DateAndTagContainer = styled.div`
   display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  h4 {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1rem 1rem 1rem 0rem;
+    color: var(--mainGray);
+    line-height: 1.2em;
+    margin: 0;
+    font-size: var(--fontBody);
+  }
+  p {
+    padding: 1rem 0rem 1rem 0rem;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    margin: 0;
+    letter-spacing: 0.1em;
+    font-size: var(--fontSmall);
+    font-weight: 500;
+    color: var(--mainGray);
+    transform: translateY(-1px);
+  }
 `
 
 const PostPreview = props => {
   let postDate = new Date(props.date)
   const options = {
-    weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -58,10 +80,11 @@ const PostPreview = props => {
     <PreviewWrapper to={`/blog/${slugifiedTitle}`} key={props.id}>
       <PreviewImage fluid={props.featuredImage}></PreviewImage>
       <PrewievTextWrapper>
+        <DateAndTagContainer>
+          <h4>{props.tag} </h4>
+          <p> {postDate.toLocaleDateString("pl-PL", options)}</p>
+        </DateAndTagContainer>
         <h3>{props.title}</h3>
-        <DateContainer>
-          <h4>{postDate.toLocaleDateString("pl-PL", options)}</h4>
-        </DateContainer>
         <p>{props.excerpt}</p>
       </PrewievTextWrapper>
     </PreviewWrapper>

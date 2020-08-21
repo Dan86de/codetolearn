@@ -18,7 +18,7 @@ const FooterWrapper = styled.div`
 `
 
 const BrandWrapper = styled.div`
-  z-index: 999;
+  z-index: 995;
   margin: 0;
   a {
     text-decoration: none;

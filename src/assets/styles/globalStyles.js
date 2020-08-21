@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     --fontH2: 37px;
     --fontH3: 23px;
     --fontBody: 1em;
+    --fontSmall: 0.8em;
     --mainColor: #0B1326;
     --secondaryColor: #2C4D99;
     --mainGray: #5C616E;
@@ -16,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
       --fontH2: 47px;
       --fontH3: 29px;
       --fontBody: 1em;
+      --fontSmall: 0.8em;
     }
   }
   html {

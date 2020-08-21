@@ -19,6 +19,9 @@ const RecentPostWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     margin: 1rem auto;
   }
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `
 
 const BlogPage = ({ data, location }) => {
@@ -27,6 +30,7 @@ const BlogPage = ({ data, location }) => {
       {data.allDatoCmsArticle.nodes.map(item => (
         <PostPreview
           title={item.title}
+          tag={item.tag}
           author={item.author}
           date={item.meta.publishedAt}
           excerpt={item.excerpt}
@@ -49,6 +53,7 @@ export const query = graphql`
           }
         }
         title
+        tag
         author
         excerpt
         articleContent {
