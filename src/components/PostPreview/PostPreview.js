@@ -11,7 +11,6 @@ const PreviewWrapper = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: inherit;
-  margin: 1rem;
   padding-bottom: 4rem;
   overflow: hidden;
   box-shadow: 0 0.1px 0.3px -2px rgba(0, 0, 0, 0.02),
@@ -77,7 +76,7 @@ const PrewievTextWrapper = styled.div`
   }
   p {
     margin-top: 1em;
-    line-height: 1.5em;
+    line-height: 1.6em;
   }
 `
 
@@ -106,15 +105,6 @@ const DateAndTagContainer = styled.div`
     color: var(--mainGray);
     transform: translateY(-1px);
   }
-`
-
-const BottomBar = styled.div`
-  width: 100%;
-  height: 2rem;
-  background-color: var(--mainColor);
-  position: absolute;
-  left: 0;
-  top: calc(100% - 2rem);
 `
 
 const PostPreview = props => {
@@ -146,7 +136,6 @@ const PostPreview = props => {
         <h3>{props.title}</h3>
         <p>{props.excerpt}</p>
       </PrewievTextWrapper>
-      <BottomBar></BottomBar>
     </PreviewWrapper>
   )
 }
