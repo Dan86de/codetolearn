@@ -32,6 +32,9 @@ const DesktopButtonWrapper = styled(Link)`
     font-weight: 600;
     letter-spacing: 0.1em;
   }
+  @media (min-width: 1024px) {
+    margin-bottom: 1em;
+  }
 `
 
 const ImageContainer = styled(Image)`

@@ -13,21 +13,21 @@ const ArticleHeroWrapper = styled.div`
     line-height: 1.2em;
     margin-top: 1em;
     font-size: var(--fontH3);
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1280px) {
       display: none;
     }
   }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1280px) {
     flex-wrap: nowrap;
     flex-direction: row-reverse;
-    padding-right: 4em;
+    padding-right: 2em;
   }
 `
 
 const BgArticleImage = styled.div`
   background: linear-gradient(to right, var(--mainColor), var(--mainGray));
   flex-basis: 100%;
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1280px) {
     width: 476px;
     height: 402px;
   }
@@ -38,17 +38,20 @@ const BgArticleImage = styled.div`
 `
 
 const ArticleFeaturedImage = styled(Img)`
-  width: 60%;
+  width: 80%;
   height: auto;
   object-fit: cover;
   margin: 0 auto;
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1280px) {
     width: 100%;
     height: 100%;
-    transform: translateX(4em) translateY(2em);
+    margin-top: 3em;
+    margin-left: 4em;
   }
   @media only screen and (min-width: 1920px) {
-    transform: translateX(12em) translateY(4em);
+    width: 90%;
+    margin-top: 4em;
+    margin-left: 12em;
   }
 `
 
@@ -80,13 +83,14 @@ const HeroNavWrapper = styled.div`
   h1 {
     display: none;
   }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1280px) {
     align-items: flex-start;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 5em;
+    justify-content: space-between;
+    padding-left: 6em;
     h1 {
       display: block;
+      flex-grow: 3;
     }
     h4 {
       margin: 0;
@@ -97,11 +101,17 @@ const HeroNavWrapper = styled.div`
       padding: 0;
     }
   }
+  @media only screen and (min-width: 920px) {
+    padding-left: 6em;
+  }
 `
 
 const ContentWrapper = styled.div`
   @media only screen and (min-width: 1024px) {
     margin-top: 3em;
+  }
+  @media only screen and (min-width: 1920px) {
+    margin-top: 6em;
   }
 `
 
