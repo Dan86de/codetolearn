@@ -9,15 +9,28 @@ const ArticleHeroWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  h3 {
+  h1 {
     line-height: 1.2em;
     margin-top: 1em;
+    font-size: var(--fontH3);
+    @media only screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    padding-right: 4em;
   }
 `
 
 const BgArticleImage = styled.div`
   background: linear-gradient(to right, var(--mainColor), var(--mainGray));
-  width: 100%;
+  flex-basis: 100%;
+  @media only screen and (min-width: 1024px) {
+    width: 476px;
+    height: 402px;
+  }
 `
 
 const ArticleFeaturedImage = styled(Img)`
@@ -25,6 +38,11 @@ const ArticleFeaturedImage = styled(Img)`
   height: auto;
   object-fit: cover;
   margin: 0 auto;
+  @media only screen and (min-width: 1024px) {
+    width: 100%;
+    height: 402px;
+    transform: translateX(4em) translateY(2em);
+  }
 `
 
 const HeroNavWrapper = styled.div`
@@ -32,7 +50,6 @@ const HeroNavWrapper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
   h4 {
     text-transform: uppercase;
     font-weight: 700;
@@ -53,9 +70,33 @@ const HeroNavWrapper = styled.div`
     color: var(--mainGray);
     transform: translateY(-1px);
   }
+  h1 {
+    display: none;
+  }
+  @media only screen and (min-width: 1024px) {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5em;
+    h1 {
+      display: block;
+    }
+    h4 {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
 `
 
-const ContentWrapper = styled.div``
+const ContentWrapper = styled.div`
+  @media only screen and (min-width: 1024px) {
+    margin-top: 3em;
+  }
+`
 
 const ContentTextWrapper = styled.div`
   margin: 0 auto;
@@ -140,10 +181,11 @@ const PostLayout = ({ data }) => {
   return (
     <>
       <ArticleHeroWrapper>
-        <h3 className={"contentWrapper"}>{data.datoCmsArticle.title}</h3>
-        <HeroNavWrapper>
+        <h1 className={"contentWrapper"}>{data.datoCmsArticle.title}</h1>
+        <HeroNavWrapper className={"contentWrapper"}>
           <BackButton></BackButton>
           <h4>{data.datoCmsArticle.tag} </h4>
+          <h1 className={"contentWrapper"}>{data.datoCmsArticle.title}</h1>
           <p> {postDate.toLocaleDateString("pl-PL", options)}</p>
         </HeroNavWrapper>
         <BgArticleImage>
