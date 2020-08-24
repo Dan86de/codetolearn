@@ -31,6 +31,10 @@ const BgArticleImage = styled.div`
     width: 476px;
     height: 402px;
   }
+  @media only screen and (min-width: 1920px) {
+    width: 710px;
+    height: 600px;
+  }
 `
 
 const ArticleFeaturedImage = styled(Img)`
@@ -40,8 +44,11 @@ const ArticleFeaturedImage = styled(Img)`
   margin: 0 auto;
   @media only screen and (min-width: 1024px) {
     width: 100%;
-    height: 402px;
+    height: 100%;
     transform: translateX(4em) translateY(2em);
+  }
+  @media only screen and (min-width: 1920px) {
+    transform: translateX(12em) translateY(4em);
   }
 `
 
