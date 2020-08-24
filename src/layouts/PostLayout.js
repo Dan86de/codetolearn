@@ -10,9 +10,9 @@ const ArticleHeroWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   h1 {
+    font-size: var(--fontH3);
     line-height: 1.2em;
     margin-top: 1em;
-    font-size: var(--fontH3);
     @media only screen and (min-width: 1280px) {
       display: none;
     }
@@ -21,6 +21,9 @@ const ArticleHeroWrapper = styled.div`
     flex-wrap: nowrap;
     flex-direction: row-reverse;
     padding-right: 2em;
+  }
+  @media only screen and (min-width: 1920px) {
+    padding-right: 8em;
   }
 `
 
@@ -91,6 +94,7 @@ const HeroNavWrapper = styled.div`
     h1 {
       display: block;
       flex-grow: 3;
+      font-size: 47px;
     }
     h4 {
       margin: 0;
@@ -103,6 +107,9 @@ const HeroNavWrapper = styled.div`
   }
   @media only screen and (min-width: 1920px) {
     padding-left: 8em;
+    h1 {
+      font-size: 72px;
+    }
   }
 `
 
