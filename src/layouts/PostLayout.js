@@ -101,8 +101,8 @@ const HeroNavWrapper = styled.div`
       padding: 0;
     }
   }
-  @media only screen and (min-width: 920px) {
-    padding-left: 6em;
+  @media only screen and (min-width: 1920px) {
+    padding-left: 8em;
   }
 `
 
