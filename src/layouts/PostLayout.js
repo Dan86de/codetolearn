@@ -14,6 +14,7 @@ const ArticleHeroWrapper = styled.div`
     margin-top: 1em;
   }
 `
+
 const BgArticleImage = styled.div`
   background: linear-gradient(to right, var(--mainColor), var(--mainGray));
   width: 100%;
@@ -56,28 +57,18 @@ const HeroNavWrapper = styled.div`
 
 const ContentWrapper = styled.div``
 
-const ArticleWrapper = styled.div`
-  width: 100%;
+const ContentTextWrapper = styled.div`
   margin: 0 auto;
   max-width: 800px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  padding: 0 1em;
   h3 {
-    margin: 0;
-    padding: 1em;
-    @media only screen and (min-width: 768px) {
-    }
+    line-height: 1.2em;
+    margin: 1em auto;
+    padding: 0;
   }
   p {
-    text-align: justify;
-    font-size: var(--fontBody);
-    line-height: 1.3;
+    padding: 0;
     margin: 0;
-    padding: 2em;
-    padding-top: 1em;
-    @media only screen and (min-width: 768px) {
-    }
   }
 `
 
@@ -96,7 +87,6 @@ const QuoteText = styled.div`
     font-size: 28px;
   }
   @media only screen and (min-width: 1024px) {
-    width: 100vw;
   }
 `
 
@@ -162,40 +152,37 @@ const PostLayout = ({ data }) => {
           />
         </BgArticleImage>
       </ArticleHeroWrapper>
-
       <ContentWrapper>
-        <ArticleWrapper>
-          {data.datoCmsArticle.articleContent.map(item => {
-            const itemKey = Object.keys(item)[1]
+        {data.datoCmsArticle.articleContent.map(item => {
+          const itemKey = Object.keys(item)[1]
 
-            switch (itemKey) {
-              case "headingContent":
-                return (
-                  <h3 className={"contentWrapper"} key={item.id}>
-                    {item[itemKey]}
-                  </h3>
-                )
-              case "paragraphContent":
-                return (
-                  <p className={"contentWrapper"} key={item.id}>
-                    {item[itemKey]}
-                  </p>
-                )
-              case "quotetext":
-                return <QuoteText key={item.id}>`"{item[itemKey]}"`</QuoteText>
-              case "articleImage":
-                return (
-                  <Img
-                    className={"contentWrapper"}
-                    key={item.id}
-                    fluid={item[itemKey].fluid}
-                  ></Img>
-                )
-              default:
-                return null
-            }
-          })}
-        </ArticleWrapper>
+          switch (itemKey) {
+            case "headingContent":
+              return (
+                <ContentTextWrapper>
+                  <h3 key={item.id}>{item[itemKey]}</h3>
+                </ContentTextWrapper>
+              )
+            case "paragraphContent":
+              return (
+                <ContentTextWrapper>
+                  <p key={item.id}>{item[itemKey]}</p>
+                </ContentTextWrapper>
+              )
+            case "quotetext":
+              return <QuoteText key={item.id}>`"{item[itemKey]}"`</QuoteText>
+            case "articleImage":
+              return (
+                <Img
+                  className={"contentWrapper"}
+                  key={item.id}
+                  fluid={item[itemKey].fluid}
+                ></Img>
+              )
+            default:
+              return null
+          }
+        })}
       </ContentWrapper>
     </>
   )
