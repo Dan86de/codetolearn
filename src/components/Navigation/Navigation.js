@@ -110,6 +110,17 @@ const MenuButtonWrapper = styled.a`
   cursor: pointer;
   align-items: center;
   margin-top: 16px;
+  position: relative;
+  &::before {
+    z-index: 999;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+  }
   &.active {
     span {
       color: var(--textOnMain);

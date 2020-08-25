@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Backdropper from "../Backdrop/Backdrop"
 
-const MobileMenuDrawerWrapper = styled.div`
+const MobileMenuDrawerWrapper = styled.b`
   display: flex;
   flex-direction: column;
   justify-content: center;
