@@ -8,6 +8,7 @@ const FooterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2em;
   padding: 25px 0;
   @media only screen and (min-width: 768px) {
     padding: 50px 0;
