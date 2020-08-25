@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
   }
   html {
     box-sizing: border-box;  
+    
   }
   body {
     width:100%;

@@ -21,7 +21,7 @@ const MobileButtonWrapper = styled(Link)`
 const DesktopButtonWrapper = styled(Link)`
   display: none;
   @media (min-width: 768px) {
-    display: block;
+    display: flex;
     color: inherit;
     font-size: var(--fontSmall);
     text-transform: uppercase;
@@ -38,8 +38,9 @@ const DesktopButtonWrapper = styled(Link)`
 `
 
 const ImageContainer = styled(Image)`
-  width: 15px;
+  width: 16px;
 `
+
 const query = graphql`
   {
     file(name: { regex: "/arrow-left/" }) {
@@ -62,7 +63,7 @@ const BackButton = props => {
         </>
       </MobileButtonWrapper>
       <DesktopButtonWrapper to="/blog" exact="true" onClick={props.linkClick}>
-        Powrót
+        {`< Powrót`}
       </DesktopButtonWrapper>
     </>
   )

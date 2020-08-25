@@ -4,23 +4,26 @@ import Img from "gatsby-image"
 import { graphql } from "gatsby"
 
 import BackButton from "../components/BackButton/BackButton"
+import ClockImage from "../components/Clock/Clock"
 
 const ArticleHeroWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 2em;
   h1 {
     font-size: var(--fontH3);
     line-height: 1.2em;
     margin-top: 1em;
-    @media only screen and (min-width: 1280px) {
-      display: none;
-    }
+    margin-bottom: 1em;
   }
   @media only screen and (min-width: 1280px) {
     flex-wrap: nowrap;
     flex-direction: row-reverse;
     padding-right: 2em;
+    h1 {
+      display: none;
+    }
   }
   @media only screen and (min-width: 1920px) {
     padding-right: 8em;
@@ -67,7 +70,7 @@ const HeroNavWrapper = styled.div`
     text-transform: uppercase;
     font-weight: 700;
     padding: 1rem 1rem 1rem 0rem;
-    color: var(--mainGray);
+    color: var(--mainColor);
     line-height: 1.2em;
     margin: 0;
     font-size: var(--fontBody);
@@ -99,10 +102,7 @@ const HeroNavWrapper = styled.div`
     h4 {
       margin: 0;
       padding: 0;
-    }
-    p {
-      margin: 0;
-      padding: 0;
+      font-size: 29px;
     }
   }
   @media only screen and (min-width: 1920px) {
@@ -113,9 +113,33 @@ const HeroNavWrapper = styled.div`
   }
 `
 
+const TagContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    display: none;
+  }
+  @media only screen and (min-width: 768px) {
+    div {
+      display: block;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+    }
+  }
+`
+
 const ContentWrapper = styled.div`
   @media only screen and (min-width: 1024px) {
     margin-top: 3em;
+  }
+  @media only screen and (min-width: 1280px) {
+    margin-top: 5em;
   }
   @media only screen and (min-width: 1920px) {
     margin-top: 6em;
@@ -125,7 +149,7 @@ const ContentWrapper = styled.div`
 const ContentTextWrapper = styled.div`
   margin: 0 auto;
   max-width: 800px;
-  padding: 0 1em;
+  padding: 0 2em;
   h3 {
     line-height: 1.2em;
     margin: 1em auto;
@@ -134,6 +158,9 @@ const ContentTextWrapper = styled.div`
   p {
     padding: 0;
     margin: 0;
+  }
+  @media only screen and (min-width: 1024px) {
+    padding: 0;
   }
 `
 
@@ -210,7 +237,10 @@ const PostLayout = ({ data }) => {
           <BackButton></BackButton>
           <h4>{data.datoCmsArticle.tag} </h4>
           <h1 className={"contentWrapper"}>{data.datoCmsArticle.title}</h1>
-          <p> {postDate.toLocaleDateString("pl-PL", options)}</p>
+          <TagContainer>
+            <ClockImage />
+            <p> {postDate.toLocaleDateString("pl-PL", options)}</p>
+          </TagContainer>
         </HeroNavWrapper>
         <BgArticleImage>
           <ArticleFeaturedImage
