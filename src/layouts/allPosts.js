@@ -16,17 +16,17 @@ const ContentWrapper = styled.div`
   }
 `
 
-const allPosts = ({ pageContext, data }) => {
+const AllPosts = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "/" : `/${currentPage - 1}`
-  const nextPage = `/${currentPage + 1}`
+  const prevPage = currentPage - 1 === 1 ? "/blog/" : `/blog/${currentPage - 1}`
+  const nextPage = `/blog/${currentPage + 1}`
 
   const post = data.allMdx.edges
   return (
     <ContentWrapper className={"contentWrapper"}>
-      {posts.map(post => {
+      {post.map(post => {
         return (
           <div key={post.node.frontmatter.slug}>
             <p>{post.node.frontmatter.date}</p>
@@ -44,6 +44,8 @@ const allPosts = ({ pageContext, data }) => {
     </ContentWrapper>
   )
 }
+
+export default AllPosts
 
 export const pageQuery = graphql`
   query AllPostsQuery($skip: Int!, $limit: Int!) {
@@ -65,5 +67,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-export default allPosts
