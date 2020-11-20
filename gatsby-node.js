@@ -1,29 +1,45 @@
-const path = require(`path`)
-const slugify = require("slugify")
+// esport.createPages = async function ({ actions, graphql }) {
+//   const { data } = await graphql`
+//     query {
+//       allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+//         edges {
+//           node {
+//             frontmatter {
+//               slug
+//             }
+//             id
+//           }
+//         }
+//       }
+//     }
+//   `
+//   //   Create pages for posts
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/layouts/PostLayout.js`)
+//   const postsPerPage = 3
+//   const numPages = Math.ceil(data.allMdx.edges.length / postsPerPage)
 
-  const result = await graphql(`
-    query queryCMSPage {
-      allDatoCmsArticle(filter: { locale: { eq: "pl" } }) {
-        nodes {
-          id
-          title
-        }
-      }
-    }
-  `)
+//   Array.from({ length: numPages }).forEach((_, i) => {
+//     actions.createPages({
+//       path: i === 0 ? `/` : `/${i + 1}`,
+//       component: require.resolve("./src/layouts/allPosts.js"),
+//       context: {
+//         limit: postsPerPage,
+//         skip: i * postsPerPage,
+//         numPages,
+//         currentPage: i + 1,
+//       },
+//     })
+//   })
+//   //   Create single blog posts
 
-  result.data.allDatoCmsArticle.nodes.forEach(post => {
-    const slugifiedTitle = slugify(post.title, { lower: true })
-    createPage({
-      path: `/blog/${slugifiedTitle}`,
-      component: blogPostTemplate,
-      context: {
-        id: post.id,
-      },
-    })
-  })
-}
+//   data.allMdx.edges.forEach(post => {
+//     const slug = post.node.frontmatter.slug
+//     const id = post.node.id
+
+//     actions.createPages({
+//       path: slug,
+//       component: require.resolve("./src/layouts/singlePost.js"),
+//       context: { id },
+//     })
+//   })
+// }
