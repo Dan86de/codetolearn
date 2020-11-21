@@ -25,23 +25,25 @@ const AllPosts = ({ pageContext, data }) => {
 
   const post = data.allMdx.edges
   return (
-    <ContentWrapper className={"contentWrapper"}>
-      {post.map(post => {
-        return (
-          <div key={post.node.frontmatter.slug}>
-            <p>{post.node.frontmatter.date}</p>
-            <h1>{post.node.frontmatter.title}</h1>
-            <p>{post.node.frontmatter.excerpt}</p>
-          </div>
-        )
-      })}
+    <>
+      <ContentWrapper className={"contentWrapper"}>
+        {post.map(post => {
+          return (
+            <div key={post.node.frontmatter.slug}>
+              <p>{post.node.frontmatter.date}</p>
+              <h1>{post.node.frontmatter.title}</h1>
+              <p>{post.node.frontmatter.excerpt}</p>
+            </div>
+          )
+        })}
+      </ContentWrapper>
       <Pagination
         isFirst={isFirst}
         isLast={isLast}
         prevPage={prevPage}
         nextPage={nextPage}
       />
-    </ContentWrapper>
+    </>
   )
 }
 
