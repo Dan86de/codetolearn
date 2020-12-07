@@ -5,33 +5,45 @@ const ContentWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-  h2 {
-    line-height: 1.2em;
+  text-align: center;
+  h3 {
+    margin: 0;
+    padding: 0;
   }
   span {
     font-weight: 700;
+    color: #2c4d99;
+  }
+  .alert {
+    color: red;
   }
 `
 
-const AboutPage = props => (
+const DziekiPage = props => (
   <ContentWrapper>
-    <h2>Dzięki za zapisanie się na newsletter!</h2>
-    <p>
-      Newsletter traktuję jako bardziej prywatna forma kontaktu. Możesz
-      spokojnie pisać na email <span> daniel@programistafrontend.pl</span>.
-      Postaram Ci się odpowiedzieć na wszystkie Twoje pytania i wątpliwości.
-      Chcę pomagać innym, którzy tak jak ja marzą o tym, by zostać programistami
-      i pracować w branży IT.
-    </p>
+    <h3>
+      Dzięki to <span>prawie</span> wszystko!
+    </h3>
     <br />
+    <h3 className="alert">!!! WAŻNE !!!</h3>
+    <br />
+    <p>Za chwilę otrzymasz e-mail z prośbą o potwierdzenie podanego adresu.</p>
     <p>
-      Jest to możliwe, niezależnie od tego gdzie się dzisiaj znajdujesz.
-      Potrzeba tylko samozaparcia i cierpliwości. Przy odpowiednio dobranych
-      metodach nauki i jasno określonej drodze też zostaniesz programistą i
-      spełnisz swoje marzenia! Jeżeli mogę Ci jakoś pomóc pisz śmiało!
-      Powodzenia!
+      Jeśli wiadomość nie przyszła to sprawdź folder <span>SPAM</span> i
+      <span> OFERTY</span>.
+      <br />
+      Adres: newsletter@programistafrontend.pl.
+      <br />
+      <span className="alert">Musisz kliknąć w przycisk z tej wiadomości!</span>
+      <br />
+      Jeśli tego nie zrobisz: nie będę mógł Ci niczego wysyłać i ominie Cię masa
+      ciekawostek ze świata frontendu!
+      <br />
+      Do przeczytania wkrótce!
+      <br />
+      Daniel Noworyta z kanału Programistafrontend
     </p>
   </ContentWrapper>
 )
 
-export default AboutPage
+export default DziekiPage
