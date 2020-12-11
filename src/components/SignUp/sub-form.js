@@ -98,6 +98,11 @@ const SubscriptionForm = () => {
   const newLocal = process.env.GATSBY_FORM_URL
   const FORM_URL = newLocal
 
+  const redirectMe = () => {
+    window.location.replace("https://programistafrontend/dzieki")
+    return false
+  }
+
   const handleSubmit = async e => {
     e.preventDefault()
     const data = new FormData(e.target)
@@ -113,6 +118,7 @@ const SubscriptionForm = () => {
       const json = await response.json()
       if (json.status === "success") {
         setStatus("SUCCESS")
+        redirectMe()
         return
       }
     } catch (err) {
