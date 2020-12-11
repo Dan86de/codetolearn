@@ -99,7 +99,7 @@ const SubscriptionForm = () => {
   const FORM_URL = newLocal
 
   const redirectMe = () => {
-    window.location.replace("https://programistafrontend/dzieki/")
+    window.location.replace("https://programistafrontend.pl/dzieki")
     return false
   }
 
