@@ -77,9 +77,9 @@ const MobileMenuDrawer = props => {
         <Link to="/" exact="true" onClick={props.linkClick}>
           Home
         </Link>
-        <Link to="/blog" onClick={props.linkClick}>
+        {/* <Link to="/blog" onClick={props.linkClick}>
           Blog
-        </Link>
+        </Link> */}
         <Link to="/omnie" onClick={props.linkClick}>
           O mnie
         </Link>
